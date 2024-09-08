@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://c0xd8vg0obynt"]
+[gd_scene load_steps=5 format=3 uid="uid://c0xd8vg0obynt"]
+
+[ext_resource type="Script" path="res://Utility/sound_manager.gd" id="1_juuta"]
+[ext_resource type="AudioStream" uid="uid://dfmn8ha74ml0a" path="res://Assets/Test_Sine-001.wav" id="2_ih3r5"]
+[ext_resource type="AudioStream" uid="uid://c4bff2w6pk441" path="res://Assets/Test_Sine-002.wav" id="3_urqrj"]
+[ext_resource type="AudioStream" uid="uid://bqbp1ehglu6th" path="res://Assets/Test_Sine_Loop_001.wav" id="4_ny55p"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_juuta")
+
+[node name="Test_Sounds" type="Node" parent="."]
+
+[node name="Sine_test_loop" type="AudioStreamPlayer" parent="Test_Sounds"]
+stream = ExtResource("4_ny55p")
+
+[node name="Sine_test_01" type="AudioStreamPlayer" parent="Test_Sounds"]
+stream = ExtResource("2_ih3r5")
+
+[node name="Sine_test_02" type="AudioStreamPlayer" parent="Test_Sounds"]
+stream = ExtResource("3_urqrj")
