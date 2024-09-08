@@ -20,6 +20,6 @@ texture = ExtResource("2_drwf7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cwsrc")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="GroundDetector" type="RayCast2D" parent="."]
 position = Vector2(-26, 0)
 target_position = Vector2(0, 36)
