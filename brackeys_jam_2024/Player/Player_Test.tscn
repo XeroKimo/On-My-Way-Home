@@ -13,7 +13,7 @@ shader = ExtResource("2_fq73u")
 [node name="PlayerTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_nnqfo")]
-position = Vector2(-439, -42)
+position = Vector2(-422, -42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -28,7 +28,7 @@ collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Level Elements/StaticBody2D"]
 material = SubResource("ShaderMaterial_1v8ka")
-scale = Vector2(17.96, 1)
+scale = Vector2(24.985, 1)
 texture = ExtResource("3_jl2p6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/StaticBody2D"]
@@ -42,7 +42,7 @@ collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Level Elements/StaticBody2D2"]
 material = SubResource("ShaderMaterial_1v8ka")
-scale = Vector2(17.96, 1)
+scale = Vector2(24.985, 1)
 texture = ExtResource("3_jl2p6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/StaticBody2D2"]
@@ -57,7 +57,7 @@ collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Level Elements/StaticBody2D3"]
 material = SubResource("ShaderMaterial_1v8ka")
-scale = Vector2(17.96, 1)
+scale = Vector2(24.985, 1)
 texture = ExtResource("3_jl2p6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/StaticBody2D3"]

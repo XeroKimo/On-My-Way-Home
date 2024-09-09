@@ -10,13 +10,14 @@ var is_on_ground: bool = false
 
 var collider: CollisionShape2D
 var collider_shape : RectangleShape2D
-
 #Percentage of the original collider's height, adjust when needed
 @export var slide_collider_height: float = 0.5
 @export var slide_duration_seconds: float = 0.5
 var original_collider_y_pos: float
 var original_collider_height: float
 var sliding: bool = false
+
+@onready var animator:= $AnimatedSprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	collision_mask = 1 << lane
@@ -35,22 +36,25 @@ func _input(event: InputEvent) -> void:
 		apply_central_impulse(Vector2.UP * jump_impulse)
 		is_on_ground = false
 	if event.is_action_pressed("slide") && !sliding && is_on_ground:
-		sliding = true
 		start_sliding()
 		await get_tree().create_timer(slide_duration_seconds).timeout
 		stop_sliding()
-		sliding = false
 
 func start_sliding():
+	sliding = true
 	collider_shape.size.y = original_collider_height * slide_collider_height
 	collider.position.y = (1 - slide_collider_height) * original_collider_height / 2
+	animator.stop()
+	animator.play("slide")
+	
 	
 func stop_sliding():
 	collider_shape.size.y = original_collider_height
 	collider.position.y = original_collider_y_pos
+	animator.stop()
+	animator.play("default_walk")
+	sliding = false
 	
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	is_on_ground = linear_velocity.y <= 0 && ground_detector.is_colliding()
