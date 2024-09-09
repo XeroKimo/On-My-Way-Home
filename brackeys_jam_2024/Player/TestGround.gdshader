@@ -5,7 +5,7 @@ void vertex() {
 }
 
 void fragment() {
-	COLOR.rgb = vec3(1, 0, 0);
+	COLOR.rgb = vec3(240.0 / 255.0, 211.0/255.0, 133.0/255.0);
 }
 
 //void light() {
