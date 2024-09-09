@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://drtkdr0lbwkki"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_mdhci"]
+[ext_resource type="Texture2D" uid="uid://b7hrol3bs3bl6" path="res://Player/Player Temp.png" id="2_drwf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwsrc"]
+size = Vector2(20, 64)
+
+[node name="Player" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 2
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_mdhci")
+lane_offset = 32.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_drwf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cwsrc")
+
+[node name="GroundDetector" type="RayCast2D" parent="."]
+position = Vector2(-26, 0)
+target_position = Vector2(0, 36)
