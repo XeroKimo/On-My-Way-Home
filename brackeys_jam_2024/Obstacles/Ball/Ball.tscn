@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jw6eeevr6jd6"]
+
+[ext_resource type="Texture2D" uid="uid://dm2bphmyvk8xa" path="res://Obstacles/Ball/ball.png" id="1_4p71u"]
+[ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_a4quu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_allp4"]
+size = Vector2(137, 48)
+
+[node name="Ball" type="Area2D"]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_a4quu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4p71u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 55)
+shape = SubResource("RectangleShape2D_allp4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
