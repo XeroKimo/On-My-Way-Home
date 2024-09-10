@@ -47,7 +47,7 @@ func _input(event: InputEvent) -> void:
 func start_sliding():
 	sliding = true
 	collider_shape.size.y = original_collider_height * slide_collider_height
-	collider.position.y = (1 - slide_collider_height) * original_collider_height / 2
+	collider.position.y = original_collider_y_pos + (1 - slide_collider_height) * original_collider_height / 2
 	animator.stop()
 	animator.play("slide")
 	

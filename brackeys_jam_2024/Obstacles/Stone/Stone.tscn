@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq6bghyr5i6u" path="res://Obstacles/Stone/Stone.png" id="2_t3mi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_allp4"]
-size = Vector2(263, 91)
+size = Vector2(203, 50)
 
 [node name="Stone" type="Area2D"]
 collision_layer = 16
@@ -16,7 +16,7 @@ position = Vector2(-4, -49)
 texture = ExtResource("2_t3mi8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -46)
+position = Vector2(0, -25)
 rotation = -0.00162135
 shape = SubResource("RectangleShape2D_allp4")
 
