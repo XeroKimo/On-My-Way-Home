@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://coq0koiy0qjcs"]
+
+[ext_resource type="Script" path="res://camera_test.gd" id="1_0befy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pq8xk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk7ak"]
+size = Vector2(178, 86)
+
+[node name="CameraTest" type="CharacterBody2D"]
+script = ExtResource("1_0befy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(88.25, 42.25)
+scale = Vector2(177.5, 85.5)
+texture = SubResource("PlaceholderTexture2D_pq8xk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(88, 42)
+shape = SubResource("RectangleShape2D_yk7ak")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(781, 48)

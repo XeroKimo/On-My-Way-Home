@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0wx71kwmnibm"]
+
+[ext_resource type="Script" path="res://Player/beta_level_movement.gd" id="1_06wh7"]
+[ext_resource type="Texture2D" uid="uid://bhd68nmc52vku" path="res://Assets/bg_no_clouds.png" id="3_840k5"]
+[ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="3_mnpoj"]
+[ext_resource type="Script" path="res://Player/game_state_manager.gd" id="4_w0sj5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("4_w0sj5")
+
+[node name="Level Elements" type="Node2D" parent="."]
+script = ExtResource("1_06wh7")
+speed = 500.0
+
+[node name="Background" type="Sprite2D" parent="Level Elements"]
+position = Vector2(963, 417)
+texture = ExtResource("3_840k5")
+
+[node name="Lane 1" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 426)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 1"]
+shape = SubResource("WorldBoundaryShape2D_q6xcp")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 1"]
+
+[node name="Lane 2" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 726)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 2"]
+shape = SubResource("WorldBoundaryShape2D_q6xcp")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 2"]
+
+[node name="Lane 3" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 1026)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 3"]
+shape = SubResource("WorldBoundaryShape2D_q6xcp")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 3"]
+
+[node name="Player" parent="." instance=ExtResource("3_mnpoj")]
+position = Vector2(161, 655)
+lane_offset = 300.0
+jump_impulse_force = 700.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 412)
+zoom = Vector2(0.6, 0.51)
