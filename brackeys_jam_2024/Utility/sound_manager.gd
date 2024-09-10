@@ -21,3 +21,9 @@ func _play_test_2():
 	
 func _play_test_loop():
 	sine_test_loop.play()
+
+func _play_calm_amb():
+	pass
+
+func _play_storm_amb():
+	pass

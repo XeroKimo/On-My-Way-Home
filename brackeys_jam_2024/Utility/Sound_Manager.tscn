@@ -18,3 +18,7 @@ stream = ExtResource("2_ih3r5")
 
 [node name="Sine_test_02" type="AudioStreamPlayer" parent="Test_Sounds"]
 stream = ExtResource("3_urqrj")
+
+[node name="Ambiences" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ambiences"]
