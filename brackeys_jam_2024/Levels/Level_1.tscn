@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3qku3no3qdqg"]
+[gd_scene load_steps=10 format=3 uid="uid://c3qku3no3qdqg"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_hfp08"]
 [ext_resource type="Texture2D" uid="uid://c4kemjngh4wjs" path="res://Assets/background.png" id="1_pfn57"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="6_6chsl"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="6_frlqr"]
 [ext_resource type="Script" path="res://Player/beta_level_movement.gd" id="6_qv1if"]
+[ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="8_54u0m"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6d2lu"]
 
@@ -415,3 +416,5 @@ jump_impulse_force = 700.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(963, 412)
 zoom = Vector2(0.6, 0.51)
+
+[node name="Sound_Manager" parent="." instance=ExtResource("8_54u0m")]
