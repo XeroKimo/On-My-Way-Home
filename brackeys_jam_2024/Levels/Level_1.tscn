@@ -1,3 +1,417 @@
-[gd_scene format=3 uid="uid://c3qku3no3qdqg"]
+[gd_scene load_steps=9 format=3 uid="uid://c3qku3no3qdqg"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_hfp08"]
+[ext_resource type="Texture2D" uid="uid://c4kemjngh4wjs" path="res://Assets/background.png" id="1_pfn57"]
+[ext_resource type="PackedScene" uid="uid://clv4ebsmmiurq" path="res://Obstacles/Lava/lava_middle.tscn" id="4_ps0dd"]
+[ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="5_onafm"]
+[ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="6_6chsl"]
+[ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="6_frlqr"]
+[ext_resource type="Script" path="res://Player/beta_level_movement.gd" id="6_qv1if"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6d2lu"]
+
+[node name="main" type="Node2D"]
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("1_hfp08")
+
+[node name="Level Elements" type="Node2D" parent="."]
+script = ExtResource("6_qv1if")
+speed = 500.0
+
+[node name="Backgrounds" type="Node2D" parent="Level Elements"]
+
+[node name="Background" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(963, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background2" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(2883, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background3" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(4800, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background4" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(6720, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background5" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(8640, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background6" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(10560, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background7" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(12480, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background8" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(14400, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background9" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(16320, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background10" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(18240, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background11" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(20160, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background12" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(22080, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background13" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(24000, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background14" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(25920, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background15" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(27840, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background16" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(29760, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Background17" type="Sprite2D" parent="Level Elements/Backgrounds"]
+position = Vector2(31680, 417)
+texture = ExtResource("1_pfn57")
+
+[node name="Lane 1" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 426)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 1"]
+shape = SubResource("WorldBoundaryShape2D_6d2lu")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 1"]
+
+[node name="Stone" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(2659, 0)
+collision_layer = 17
+
+[node name="Stone2" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(6419, 0)
+collision_layer = 17
+
+[node name="Stone3" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(7608, 0)
+collision_layer = 17
+
+[node name="Stone4" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(10645, 0)
+collision_layer = 17
+
+[node name="Stone5" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(13617, 0)
+collision_layer = 17
+
+[node name="Stone6" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(17065, 0)
+collision_layer = 17
+
+[node name="Stone7" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(22056, 0)
+collision_layer = 17
+
+[node name="Stone8" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(23724, 0)
+collision_layer = 17
+
+[node name="Stone9" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(26237, 0)
+collision_layer = 17
+
+[node name="Stone10" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(27837, 0)
+collision_layer = 17
+
+[node name="Stone11" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(29971, 0)
+collision_layer = 17
+
+[node name="Stone12" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(31286, 0)
+collision_layer = 17
+
+[node name="Hurdle" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(3801, 0)
+collision_layer = 17
+
+[node name="Hurdle2" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(15918, 0)
+collision_layer = 17
+
+[node name="Hurdle3" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(20286, 0)
+collision_layer = 17
+
+[node name="Hurdle4" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(25114, 2)
+collision_layer = 17
+
+[node name="Hurdle5" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(25303, 0)
+collision_layer = 17
+
+[node name="Hurdle6" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(28922, 0)
+collision_layer = 17
+
+[node name="Hurdle7" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(31932, 0)
+collision_layer = 17
+
+[node name="LavaMiddle" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(9016, 0)
+collision_layer = 17
+
+[node name="LavaMiddle2" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(9308, 0)
+collision_layer = 17
+
+[node name="LavaMiddle3" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(11690, 0)
+collision_layer = 17
+
+[node name="LavaMiddle4" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(12639, 0)
+collision_layer = 17
+
+[node name="LavaMiddle5" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(17783, 0)
+collision_layer = 17
+
+[node name="LavaMiddle6" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(18079, 0)
+collision_layer = 17
+
+[node name="Lane 2" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 726)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 2"]
+shape = SubResource("WorldBoundaryShape2D_6d2lu")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 2"]
+
+[node name="Stone" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(1656, 0)
+collision_layer = 18
+
+[node name="Stone2" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(3895, 0)
+collision_layer = 18
+
+[node name="Stone3" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(12502, 0)
+collision_layer = 18
+
+[node name="Stone4" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(21377, 0)
+collision_layer = 18
+
+[node name="Stone5" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(23744, 0)
+collision_layer = 18
+
+[node name="Stone6" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(25789, 0)
+collision_layer = 18
+
+[node name="Stone7" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(28440, 0)
+collision_layer = 18
+
+[node name="Stone8" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(29812, 0)
+collision_layer = 18
+
+[node name="Stone9" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(31019, 0)
+collision_layer = 18
+
+[node name="Hurdle" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(5622, 0)
+collision_layer = 18
+
+[node name="Hurdle2" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(7606, 0)
+collision_layer = 18
+
+[node name="Hurdle3" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(10109, 0)
+collision_layer = 18
+
+[node name="Hurdle4" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(11468, 0)
+collision_layer = 18
+
+[node name="Hurdle5" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(14614, 0)
+collision_layer = 18
+
+[node name="Hurdle6" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(20334, 0)
+collision_layer = 18
+
+[node name="Hurdle7" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(22490, 0)
+collision_layer = 18
+
+[node name="Hurdle8" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(24663, 0)
+collision_layer = 18
+
+[node name="Hurdle9" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(26871, 0)
+collision_layer = 18
+
+[node name="Hurdle10" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(31989, 0)
+collision_layer = 18
+
+[node name="LavaMiddle" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(9016, 0)
+collision_layer = 18
+
+[node name="LavaMiddle2" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(13480, 0)
+collision_layer = 18
+
+[node name="LavaMiddle3" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(15031, 0)
+collision_layer = 18
+
+[node name="LavaMiddle4" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(16247, 0)
+collision_layer = 18
+
+[node name="LavaMiddle5" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(17543, 0)
+collision_layer = 18
+
+[node name="LavaMiddle6" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(17839, 0)
+collision_layer = 18
+
+[node name="Lane 3" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 1026)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 3"]
+shape = SubResource("WorldBoundaryShape2D_6d2lu")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 3"]
+
+[node name="Stone" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(4759, 0)
+collision_layer = 20
+
+[node name="Stone2" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(7624, 0)
+collision_layer = 20
+
+[node name="Stone3" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(10047, 0)
+collision_layer = 20
+
+[node name="Stone4" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(17033, 0)
+collision_layer = 20
+
+[node name="Stone5" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(22823, 0)
+collision_layer = 20
+
+[node name="Stone6" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(24397, 0)
+collision_layer = 20
+
+[node name="Stone7" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(25573, 0)
+collision_layer = 20
+
+[node name="Stone8" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("6_6chsl")]
+position = Vector2(29037, 0)
+collision_layer = 20
+
+[node name="Hurdle" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(6170, 0)
+collision_layer = 20
+
+[node name="Hurdle2" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(14334, 0)
+collision_layer = 20
+
+[node name="Hurdle3" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(18398, 0)
+collision_layer = 20
+
+[node name="Hurdle4" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(20398, 0)
+collision_layer = 20
+
+[node name="Hurdle5" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(21972, 0)
+collision_layer = 20
+
+[node name="Hurdle6" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(27487, 0)
+collision_layer = 20
+
+[node name="Hurdle7" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(30503, 0)
+collision_layer = 20
+
+[node name="Hurdle8" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_onafm")]
+position = Vector2(31792, 0)
+collision_layer = 20
+
+[node name="LavaMiddle" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(10990, 0)
+collision_layer = 20
+
+[node name="LavaMiddle2" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(12376, 0)
+collision_layer = 20
+
+[node name="LavaMiddle3" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(12679, 0)
+collision_layer = 20
+
+[node name="LavaMiddle4" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(12968, 0)
+collision_layer = 20
+
+[node name="LavaMiddle5" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(13251, 0)
+collision_layer = 20
+
+[node name="LavaMiddle6" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_ps0dd")]
+position = Vector2(18935, 0)
+collision_layer = 20
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Lava" type="Node2D" parent="Obstacles"]
+
+[node name="Player" parent="." instance=ExtResource("6_frlqr")]
+position = Vector2(161, 726)
+lane_offset = 300.0
+jump_impulse_force = 700.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 412)
+zoom = Vector2(0.6, 0.51)

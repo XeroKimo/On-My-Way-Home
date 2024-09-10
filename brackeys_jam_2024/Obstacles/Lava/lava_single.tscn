@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo0huhmlv4v03"]
+
+[ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_dqhyh"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3qpqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kx1u"]
+size = Vector2(172, 57.5)
+
+[node name="LavaSingle" type="Area2D"]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_dqhyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -69)
+scale = Vector2(297.5, 222.5)
+texture = SubResource("PlaceholderTexture2D_3qpqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13.75)
+shape = SubResource("RectangleShape2D_3kx1u")
