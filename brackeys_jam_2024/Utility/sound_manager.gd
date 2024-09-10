@@ -36,3 +36,14 @@ func play_calm_mus():
 	
 func play_storm_amb():
 	pass
+
+#SFX
+
+func play_jump():
+	play_test_2()
+
+func play_slide():
+	play_test_2()
+	
+func play_lane_switch():
+	play_test_1()
