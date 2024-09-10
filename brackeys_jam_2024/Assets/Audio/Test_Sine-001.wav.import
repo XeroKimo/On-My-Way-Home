@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfmn8ha74ml0a"
-path="res://.godot/imported/Test_Sine-001.wav-fde7b6641ec57fdc9653cefd097e69b0.sample"
+path="res://.godot/imported/Test_Sine-001.wav-e0e069c6c3eef8cc283f7cbb0db5077c.sample"
 
 [deps]
 
-source_file="res://Assets/Test_Sine-001.wav"
-dest_files=["res://.godot/imported/Test_Sine-001.wav-fde7b6641ec57fdc9653cefd097e69b0.sample"]
+source_file="res://Assets/Audio/Test_Sine-001.wav"
+dest_files=["res://.godot/imported/Test_Sine-001.wav-e0e069c6c3eef8cc283f7cbb0db5077c.sample"]
 
 [params]
 

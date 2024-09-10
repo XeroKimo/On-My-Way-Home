@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bqbp1ehglu6th"
-path="res://.godot/imported/Test_Sine_Loop_001.wav-d630500d9c1e89e0e702c67ddf2f47c9.sample"
+path="res://.godot/imported/Test_Sine_Loop_001.wav-807ee8207cec96c7354f4756c0c73504.sample"
 
 [deps]
 
-source_file="res://Assets/Test_Sine_Loop_001.wav"
-dest_files=["res://.godot/imported/Test_Sine_Loop_001.wav-d630500d9c1e89e0e702c67ddf2f47c9.sample"]
+source_file="res://Assets/Audio/Test_Sine_Loop_001.wav"
+dest_files=["res://.godot/imported/Test_Sine_Loop_001.wav-807ee8207cec96c7354f4756c0c73504.sample"]
 
 [params]
 
