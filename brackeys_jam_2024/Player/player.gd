@@ -5,7 +5,7 @@ var lane: int = 1
 var old_lane: int = lane
 @export var lane_offset: float
 
-const jump_impulse = 350
+@export var jump_impulse_force: float = 350
 @onready var ground_detector := $GroundDetector
 var is_on_ground: bool = false
 
@@ -37,7 +37,7 @@ func _input(event: InputEvent) -> void:
 		lane -= 1
 	if event.is_action_pressed("jump") && is_on_ground:
 		stop_sliding()
-		apply_central_impulse(Vector2.UP * jump_impulse)
+		apply_central_impulse(Vector2.UP * jump_impulse_force)
 		is_on_ground = false
 	if event.is_action_pressed("slide") && !sliding && is_on_ground:
 		start_sliding()
