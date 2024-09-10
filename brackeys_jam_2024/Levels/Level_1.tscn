@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3qku3no3qdqg"]
+[gd_scene load_steps=6 format=3 uid="uid://c3qku3no3qdqg"]
 
 [ext_resource type="Texture2D" uid="uid://c4kemjngh4wjs" path="res://Assets/background.png" id="1_pfn57"]
 [ext_resource type="PackedScene" uid="uid://ch6smcvoguymr" path="res://Obstacles/rock.tscn" id="2_0ynbs"]
 [ext_resource type="PackedScene" uid="uid://by5tk31axw370" path="res://Obstacles/Balloon.tscn" id="3_aese6"]
 [ext_resource type="PackedScene" uid="uid://clv4ebsmmiurq" path="res://Obstacles/lava.tscn" id="4_ps0dd"]
+[ext_resource type="PackedScene" uid="uid://coq0koiy0qjcs" path="res://InfiniteBackGroundTest/camera_test.tscn" id="5_hr8yq"]
 
 [node name="main" type="Node2D"]
 
@@ -300,3 +301,5 @@ position = Vector2(17839, 528)
 
 [node name="Lava18" parent="Obstacles/Lava" instance=ExtResource("4_ps0dd")]
 position = Vector2(18935, 824)
+
+[node name="CameraTest" parent="." instance=ExtResource("5_hr8yq")]
