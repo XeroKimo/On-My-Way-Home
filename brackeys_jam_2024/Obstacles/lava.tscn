@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://clv4ebsmmiurq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3qpqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kx1u"]
+size = Vector2(298, 223)
+
+[node name="Lava" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(139.25, 101.75)
+scale = Vector2(297.5, 222.5)
+texture = SubResource("PlaceholderTexture2D_3qpqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(139, 101.5)
+shape = SubResource("RectangleShape2D_3kx1u")
