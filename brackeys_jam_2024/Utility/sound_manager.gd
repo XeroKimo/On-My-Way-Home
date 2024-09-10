@@ -13,17 +13,26 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _play_test_1():
+#Test Sounds
+func play_test_1():
 	sine_test_01.play()
 
-func _play_test_2():
+func play_test_2():
 	sine_test_02.play()
 	
-func _play_test_loop():
+func play_test_loop():
 	sine_test_loop.play()
-
-func _play_calm_amb():
+	
+#Music and Ambiences
+func play_calm_amb():
+	$Ambiences/AMB_Calm_Gulls.play()
+	$Ambiences/AMB_Calm_Waves.play()
+	$Ambiences/AMB_Calm_Hiss.play()
 	pass
-
-func _play_storm_amb():
+	
+func play_calm_mus():
+	$Music/MUS_Calm.play()
+	pass
+	
+func play_storm_amb():
 	pass

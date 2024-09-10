@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://drtkdr0lbwkki"]
+[gd_scene load_steps=5 format=3 uid="uid://drtkdr0lbwkki"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_mdhci"]
+[ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="3_c7kqe"]
 [ext_resource type="SpriteFrames" uid="uid://cjgk8tb5fgow5" path="res://Player/player_walk.tres" id="3_oorys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwsrc"]
@@ -28,3 +29,5 @@ shape = SubResource("RectangleShape2D_cwsrc")
 [node name="GroundDetector" type="RayCast2D" parent="."]
 position = Vector2(-61, -33.5)
 target_position = Vector2(0, 36)
+
+[node name="Sound_Manager" parent="." instance=ExtResource("3_c7kqe")]
