@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0xd8vg0obynt"]
+[gd_scene load_steps=9 format=3 uid="uid://c0xd8vg0obynt"]
 
 [ext_resource type="Script" path="res://Utility/sound_manager.gd" id="1_juuta"]
 [ext_resource type="AudioStream" uid="uid://dfmn8ha74ml0a" path="res://Assets/Audio/Test_Sine-001.wav" id="2_ih3r5"]
 [ext_resource type="AudioStream" uid="uid://c4bff2w6pk441" path="res://Assets/Audio/Test_Sine-002.wav" id="3_urqrj"]
 [ext_resource type="AudioStream" uid="uid://bqbp1ehglu6th" path="res://Assets/Audio/Test_Sine_Loop_001.wav" id="4_ny55p"]
+[ext_resource type="AudioStream" uid="uid://cgixq7ekf8oc" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Animal_Gulls_Loop.wav" id="5_o05xu"]
+[ext_resource type="AudioStream" uid="uid://b02tjfn7h8xrv" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Water_Waves_Loop.wav" id="6_gsyb4"]
+[ext_resource type="AudioStream" uid="uid://cdiq1enkpxkj5" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Water_Hiss_Loop.wav" id="7_2sehs"]
+[ext_resource type="AudioStream" uid="uid://k6s36c35h70e" path="res://Assets/Audio/MUS/MUS_Lo-Fi.wav" id="8_cv1ap"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_juuta")
@@ -21,4 +25,18 @@ stream = ExtResource("3_urqrj")
 
 [node name="Ambiences" type="Node" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ambiences"]
+[node name="AMB_Calm_Gulls" type="AudioStreamPlayer" parent="Ambiences"]
+stream = ExtResource("5_o05xu")
+
+[node name="AMB_Calm_Waves" type="AudioStreamPlayer" parent="Ambiences"]
+stream = ExtResource("6_gsyb4")
+
+[node name="AMB_Calm_Hiss" type="AudioStreamPlayer" parent="Ambiences"]
+stream = ExtResource("7_2sehs")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="MUS_Calm" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("8_cv1ap")
+
+[node name="SFX" type="Node" parent="."]
