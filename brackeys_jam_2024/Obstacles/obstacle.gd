@@ -13,5 +13,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if (body as CollisionObject2D).collision_mask & collision_layer == 0:
 		return
+	GameState.end_game()
 	print("some body entered ", body.name)
 	pass # Replace with function body.

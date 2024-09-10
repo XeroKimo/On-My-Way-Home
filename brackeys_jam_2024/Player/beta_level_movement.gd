@@ -1,3 +1,5 @@
+class_name BetaLevelMovement
+
 extends Node2D
 
 @export var speed: float = 30
