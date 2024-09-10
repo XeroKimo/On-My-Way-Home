@@ -1,3 +1,4 @@
+class_name Player
 extends RigidBody2D
 
 var lane: int = 1
@@ -26,6 +27,9 @@ func _ready() -> void:
 	original_collider_y_pos = collider.position.y
 
 func _input(event: InputEvent) -> void:
+	if GameState.game_ended:
+		return
+		
 	if event.is_action_pressed("lane_down") && lane < 2:
 		lane += 1
 	if event.is_action_pressed("lane_up") && lane > 0:
