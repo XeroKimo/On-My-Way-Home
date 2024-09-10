@@ -33,14 +33,22 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("lane_down") && lane < 2:
 		lane += 1
+		# Replace with lande change sound
+		$Sound_Manager.play_test_1()
 	if event.is_action_pressed("lane_up") && lane > 0:
 		lane -= 1
+		# replace with lane change sound
+		$Sound_Manager.play_test_1()
 	if event.is_action_pressed("jump") && is_on_ground:
 		stop_sliding()
 		apply_central_impulse(Vector2.UP * jump_impulse_force)
+		# Replace with jump sound
+		$Sound_Manager.play_test_2()
 		is_on_ground = false
 	if event.is_action_pressed("slide") && !sliding && is_on_ground:
 		start_sliding()
+		# replace with slide sound
+		$Sound_Manager.play_test_2()
 		await get_tree().create_timer(slide_duration_seconds).timeout
 		stop_sliding()
 
