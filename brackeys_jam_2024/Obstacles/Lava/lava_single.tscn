@@ -11,6 +11,7 @@ size = Vector2(172, 57.5)
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_dqhyh")
+metadata/type = "lava"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
