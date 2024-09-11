@@ -1,6 +1,6 @@
 extends Node
 
-@onready var level_elements: BetaLevelMovement = $"../Level Elements"
+@onready var level_elements:= $"../Level Elements"
 @onready var sound_manager: Node2D = $"../Sound_Manager"
 
 
