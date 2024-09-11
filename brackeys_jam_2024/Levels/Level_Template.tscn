@@ -20,6 +20,11 @@ speed = 500.0
 position = Vector2(963, 417)
 texture = ExtResource("3_840k5")
 
+[node name="Background2" type="Sprite2D" parent="Level Elements"]
+position = Vector2(0, -223)
+texture = ExtResource("3_840k5")
+centered = false
+
 [node name="Lane 1" type="StaticBody2D" parent="Level Elements"]
 position = Vector2(0, 426)
 

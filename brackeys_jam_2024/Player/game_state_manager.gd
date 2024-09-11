@@ -1,6 +1,6 @@
 extends Node
 
-@onready var level_elements: BetaLevelMovement = $"../Level Elements"
+@onready var level_elements:= $"../Level Elements"
 
 
 # Called when the node enters the scene tree for the first time.

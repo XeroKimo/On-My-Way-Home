@@ -2,6 +2,10 @@ extends Node
 
 signal on_game_ended;
 
+var _generator:= RandomNumberGenerator.new()
+var random: 
+	get: return _generator
+
 var _game_ended: bool = false
 var game_ended: bool: 
 	get: return _game_ended

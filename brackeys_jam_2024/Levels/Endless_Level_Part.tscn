@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cal2k0qfth8px"]
+
+[ext_resource type="Script" path="res://Levels/endless_level_part.gd" id="1_a61lj"]
+[ext_resource type="Texture2D" uid="uid://bhd68nmc52vku" path="res://Assets/bg_no_clouds.png" id="1_ybybl"]
+
+[node name="EndlessLevelPart" type="Node2D"]
+script = ExtResource("1_a61lj")
+_lane_proxies = [NodePath("Lane Proxy 1"), NodePath("Lane Proxy 2"), NodePath("Lane Proxy 3")]
+_lane_width = 1920
+_cell_count = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ybybl")
+centered = false
+
+[node name="Lane Proxy 1" type="Node2D" parent="."]
+
+[node name="Lane Proxy 2" type="Node2D" parent="."]
+
+[node name="Lane Proxy 3" type="Node2D" parent="."]
