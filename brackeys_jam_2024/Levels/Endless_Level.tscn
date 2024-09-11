@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddgkp3dgel6wr"]
+[gd_scene load_steps=11 format=3 uid="uid://ddgkp3dgel6wr"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
 [ext_resource type="Texture2D" uid="uid://bghm5s8x2lii7" path="res://Assets/storm_clouds_0001.png" id="8_6j74r"]
+[ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="9_r7xli"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
@@ -66,3 +67,5 @@ centered = false
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 636)
 zoom = Vector2(0.6, 0.51)
+
+[node name="Sound_Manager" parent="." instance=ExtResource("9_r7xli")]
