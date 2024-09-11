@@ -17,8 +17,8 @@ const parts_buffer : int = 2
 var storm_brewing: bool = false
 var storm_timer_seconds: float
 var previous_storm_timer_seconds: float
-var pre_storm_duration_seconds: float = 5
-var storm_duration_seconds: float = 15
+@export var pre_storm_duration_seconds: float = 5
+@export var storm_duration_seconds: float = 15
 var storm_in_progress: bool:
 	get: return storm_brewing && storm_timer_seconds >= 0 && storm_timer_seconds <= storm_duration_seconds
 

@@ -38,7 +38,6 @@ acceleration = 20.0
 
 [node name="Background" parent="Level Elements" instance=ExtResource("3_r5d8s")]
 visible = false
-z_index = -2
 position = Vector2(0, 0)
 centered = false
 
