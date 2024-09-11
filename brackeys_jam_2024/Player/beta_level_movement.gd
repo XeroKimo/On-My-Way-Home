@@ -11,5 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if GameState.game_ended:
+		return
 	position.x -= speed * delta
 	pass

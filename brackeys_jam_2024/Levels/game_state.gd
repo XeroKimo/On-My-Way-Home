@@ -9,7 +9,7 @@ var random:
 var _game_ended: bool = false
 var game_ended: bool: 
 	get: return _game_ended
-
+var invincible_mode: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -24,6 +24,7 @@ func reset_game() -> void:
 	get_tree().reload_current_scene()
 
 func end_game() -> void:
-	print("Game has ended")
+	if invincible_mode:
+		return
 	_game_ended = true
 	on_game_ended.emit()

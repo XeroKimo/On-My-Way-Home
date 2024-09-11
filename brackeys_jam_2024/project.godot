@@ -27,6 +27,7 @@ window/stretch/mode="viewport"
 
 cell_count=4
 lane_width=1920
+obstalce_spawn_chance=0.5
 
 [input]
 

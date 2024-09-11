@@ -8,6 +8,7 @@ script = ExtResource("1_a61lj")
 _lane_proxies = [NodePath("Lane Proxy 1"), NodePath("Lane Proxy 2"), NodePath("Lane Proxy 3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
 texture = ExtResource("1_ybybl")
 centered = false
 
