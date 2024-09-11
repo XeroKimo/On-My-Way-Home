@@ -3,8 +3,8 @@ class_name EndlessLevelPart
 extends Node2D
 
 @export var _lane_proxies: Array
-@export var _lane_width: int
-@export var _cell_count: int
+@onready var _lane_width: int = ProjectSettings.get_setting("global/lane_width")
+@onready var _cell_count: int= ProjectSettings.get_setting("global/cell_count")
 
 var _safe_path : Array
 var _cells : Array
@@ -36,8 +36,9 @@ func initialize(positions: Array, obstacles: Array, lava_nodes: Array, spawn_lav
 	for i in _cells.size():
 		if _cells[i] == null:
 			continue
-		var child: Node2D = (_cells[i] as PackedScene).instantiate()
+		var child: = (_cells[i] as PackedScene).instantiate() as Obstacle
 		var lane = i / _cell_count
+		child.collision_layer |= 1 << lane
 		_get_lane(lane).add_child(child)
 		child.position = Vector2((_lane_width / _cell_count) * (i % _cell_count) + (_lane_width / _cell_count) / 2, 0)
 	
@@ -55,4 +56,5 @@ func _get_cell(lane: int, index: int) -> PackedScene:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Sprite2D.visible = !GameState.game_ended
 	pass

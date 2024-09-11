@@ -23,6 +23,7 @@ var sliding: bool = false
 func _ready() -> void:
 	collision_mask = 1 << lane
 	collider = $CollisionShape2D
+	position.x = ProjectSettings.get_setting("global/lane_width") / ProjectSettings.get_setting("global/cell_count") / 2
 	collider_shape = collider.shape as RectangleShape2D
 	original_collider_height = collider_shape.size.y
 	original_collider_y_pos = collider.position.y

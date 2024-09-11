@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddgkp3dgel6wr"]
 
+[ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
 [ext_resource type="PackedScene" uid="uid://cal2k0qfth8px" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
 [ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="3_4plmr"]
 [ext_resource type="PackedScene" uid="uid://ccwomfon81oh5" path="res://Utility/background.tscn" id="3_r5d8s"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
-[ext_resource type="PackedScene" uid="uid://clv4ebsmmiurq" path="res://Obstacles/Lava/lava_middle.tscn" id="4_wpwhh"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
@@ -13,11 +13,15 @@
 [node name="Endless Level" type="Node2D"]
 
 [node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("1_qpv6c")
 
 [node name="Level Elements" type="Node2D" parent="."]
 script = ExtResource("2_jc88d")
 background = ExtResource("2_jioax")
 obstacles = [ExtResource("3_4plmr"), ExtResource("5_kpd41")]
+initial_speed = 600.0
+max_speed = 1200.0
+acceleration = 20.0
 
 [node name="Background" parent="Level Elements" instance=ExtResource("3_r5d8s")]
 position = Vector2(0, 0)
@@ -31,15 +35,6 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 1"]
 
-[node name="Hurdle" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("3_4plmr")]
-position = Vector2(519, 0)
-
-[node name="LavaMiddle" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("4_wpwhh")]
-position = Vector2(951, 0)
-
-[node name="Stone" parent="Level Elements/Lane 1/Obstacles" instance=ExtResource("5_kpd41")]
-position = Vector2(1428, 0)
-
 [node name="Lane 2" type="StaticBody2D" parent="Level Elements"]
 position = Vector2(0, 975)
 collision_layer = 2
@@ -48,15 +43,6 @@ collision_layer = 2
 shape = SubResource("WorldBoundaryShape2D_q6xcp")
 
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 2"]
-
-[node name="Hurdle" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("3_4plmr")]
-position = Vector2(519, 0)
-
-[node name="LavaMiddle" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("4_wpwhh")]
-position = Vector2(951, 0)
-
-[node name="Stone" parent="Level Elements/Lane 2/Obstacles" instance=ExtResource("5_kpd41")]
-position = Vector2(1428, 0)
 
 [node name="Lane 3" type="StaticBody2D" parent="Level Elements"]
 position = Vector2(0, 1250)
@@ -67,20 +53,11 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 3"]
 
-[node name="Hurdle" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("3_4plmr")]
-position = Vector2(519, 0)
-
-[node name="LavaMiddle" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("4_wpwhh")]
-position = Vector2(951, 0)
-
-[node name="Stone" parent="Level Elements/Lane 3/Obstacles" instance=ExtResource("5_kpd41")]
-position = Vector2(1428, 0)
-
 [node name="Player" parent="." instance=ExtResource("4_6v4xi")]
-position = Vector2(161, 655)
+position = Vector2(160, 975)
 lane_offset = 275.0
 jump_impulse_force = 700.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 640)
+position = Vector2(960, 636)
 zoom = Vector2(0.6, 0.51)
