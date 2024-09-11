@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddgkp3dgel6wr"]
+[gd_scene load_steps=10 format=3 uid="uid://ddgkp3dgel6wr"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwomfon81oh5" path="res://Utility/background.tscn" id="3_r5d8s"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
+[ext_resource type="Texture2D" uid="uid://bghm5s8x2lii7" path="res://Assets/storm_clouds_0001.png" id="8_6j74r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
@@ -57,6 +58,10 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 position = Vector2(160, 975)
 lane_offset = 275.0
 jump_impulse_force = 700.0
+
+[node name="Clouds" type="Sprite2D" parent="."]
+texture = ExtResource("8_6j74r")
+centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 636)
