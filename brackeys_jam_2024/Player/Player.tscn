@@ -31,7 +31,3 @@ position = Vector2(-61, -33.5)
 target_position = Vector2(0, 36)
 
 [node name="Sound_Manager" parent="." instance=ExtResource("3_c7kqe")]
-
-[node name="Fs_Timer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true

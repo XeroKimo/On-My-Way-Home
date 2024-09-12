@@ -6,11 +6,9 @@ var old_lane: int = lane
 @export var lane_offset: float
 
 @export var jump_impulse_force: float = 350
-#I also added this - tj
-@export var jump_duration: float = 1.3
-#end
 @onready var ground_detector := $GroundDetector
 var is_on_ground: bool = false
+var previous_is_on_ground: bool = false
 
 var collider: CollisionShape2D
 var collider_shape : RectangleShape2D
@@ -22,7 +20,7 @@ var original_collider_height: float
 var sliding: bool = false
 
 @onready var animator:= $AnimatedSprite2D
-@onready var fs_timer: Timer = $Fs_Timer
+var previous_frame: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,11 +45,8 @@ func _input(event: InputEvent) -> void:
 		apply_central_impulse(Vector2.UP * jump_impulse_force)
 		$Sound_Manager.play_jump()
 		is_on_ground = false
-		#new stuff below -tj
-		animator.stop()
 		animator.play("jump")
-		await get_tree().create_timer(jump_duration).timeout
-		animator.play("default_walk")
+		previous_frame = 0
 		#ends here -tj
 	if event.is_action_pressed("slide") && !sliding && is_on_ground:
 		start_sliding()
@@ -73,21 +68,24 @@ func stop_sliding():
 	animator.stop()
 	animator.play("default_walk")
 	sliding = false
+
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	is_on_ground = linear_velocity.y <= 0 && ground_detector.is_colliding()
-	#janky walk sounds
-	if  is_on_ground == true && animator.animation == "default_walk" :
-		if fs_timer.is_stopped() && animator.frame == 1 :
-			fs_timer.start()
+	
+	#janky walk sounds -tj
+	if !previous_is_on_ground && is_on_ground:
+		animator.play("default_walk")
+		animator.frame = 1
+		
+	if  is_on_ground && animator.animation == "default_walk" :
+		if animator.frame == 1 && previous_frame != animator.frame:
 			$Sound_Manager.play_footstep()
-		else :
-			pass
-	
-	else :
-		pass
-	
+	previous_frame = animator.frame
+	previous_is_on_ground = is_on_ground
+	#ends here
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	collision_mask = 1 << lane
 	position.y += lane_offset * (lane - old_lane)
