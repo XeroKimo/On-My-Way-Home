@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://ddgkp3dgel6wr"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
+[ext_resource type="SpriteFrames" uid="uid://dy15uc5p3hhll" path="res://Assets/Sky/Sky.tres" id="2_ghqmb"]
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
 [ext_resource type="PackedScene" uid="uid://cal2k0qfth8px" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
-[ext_resource type="Texture2D" uid="uid://pat7mtcm1j7j" path="res://Assets/storm_sky_0001.png" id="2_lmko4"]
 [ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="3_4plmr"]
 [ext_resource type="PackedScene" uid="uid://ccwomfon81oh5" path="res://Utility/background.tscn" id="3_r5d8s"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
 [ext_resource type="PackedScene" uid="uid://bo0huhmlv4v03" path="res://Obstacles/Lava/lava_single.tscn" id="6_u1lef"]
-[ext_resource type="Texture2D" uid="uid://bghm5s8x2lii7" path="res://Assets/storm_clouds_0001.png" id="8_6j74r"]
+[ext_resource type="Texture2D" uid="uid://bghm5s8x2lii7" path="res://Assets/Clouds/storm_clouds_0001.png" id="8_6j74r"]
 [ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="9_r7xli"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
@@ -19,14 +19,6 @@
 [node name="GameStateManager" type="Node" parent="."]
 script = ExtResource("1_qpv6c")
 
-[node name="Sky" type="Sprite2D" parent="."]
-texture = ExtResource("2_lmko4")
-centered = false
-
-[node name="Clouds" type="Sprite2D" parent="Sky"]
-texture = ExtResource("8_6j74r")
-centered = false
-
 [node name="Level Elements" type="Node2D" parent="."]
 script = ExtResource("2_jc88d")
 background = ExtResource("2_jioax")
@@ -35,6 +27,15 @@ lava_obstacles = [ExtResource("6_u1lef")]
 initial_speed = 600.0
 max_speed = 1200.0
 acceleration = 20.0
+
+[node name="Sky" type="AnimatedSprite2D" parent="Level Elements"]
+sprite_frames = ExtResource("2_ghqmb")
+animation = &"transition"
+centered = false
+
+[node name="Clouds" type="Sprite2D" parent="Level Elements/Sky"]
+texture = ExtResource("8_6j74r")
+centered = false
 
 [node name="Background" parent="Level Elements" instance=ExtResource("3_r5d8s")]
 visible = false

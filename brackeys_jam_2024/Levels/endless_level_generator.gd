@@ -8,6 +8,7 @@ extends Node2D
 @export var initial_speed: float = 300
 @export var max_speed: float = 600
 @export var acceleration: float = 10
+@onready var sky:= $Sky
 
 var speed: float
 var level_parts: Array
@@ -49,11 +50,12 @@ func _process(delta: float) -> void:
 	_spawn_new_part()
 	speed += acceleration * delta
 	
-	if !storm_brewing:
-		storm_brewing = GameState.random.randf() <= 0.5
-		if storm_brewing:
-			print("A storm is brewing")
-			storm_timer_seconds = -pre_storm_duration_seconds
+	if !storm_brewing && GameState.random.randf() <= 0.2:
+		storm_brewing = true
+		print("A storm is brewing")
+		storm_timer_seconds = -pre_storm_duration_seconds
+		sky.play("transition")
+		sky.speed_scale = 1.0 / pre_storm_duration_seconds
 	else:
 		previous_storm_timer_seconds = storm_timer_seconds
 		storm_timer_seconds += delta
@@ -63,11 +65,13 @@ func _process(delta: float) -> void:
 			_end_storm()
 		if storm_timer_seconds >= storm_duration_seconds + pre_storm_duration_seconds:
 			print("Storm has subsided")
+			sky.play("inactive")
 			storm_brewing = false
 	pass
 	
 func _begin_storm():
 	print("Storm has started")
+	sky.play("active")
 	for p in level_parts:
 		var part = p as EndlessLevelPart
 		if part.position.x >= lane_width:
@@ -76,6 +80,7 @@ func _begin_storm():
 	
 func _end_storm():
 	print("Storm has ended")
+	sky.play_backwards("transition")
 	for p in level_parts:
 		var part = p as EndlessLevelPart
 		part.remove_lava_nodes()

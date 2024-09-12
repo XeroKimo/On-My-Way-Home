@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pat7mtcm1j7j"
-path="res://.godot/imported/storm_sky_0001.png-eb0785bf6a6cff528c69dd3d9716d12d.ctex"
+uid="uid://bghm5s8x2lii7"
+path="res://.godot/imported/storm_clouds_0001.png-3c6ffafe2b7f523dc72ccdd2cce422df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/storm_sky_0001.png"
-dest_files=["res://.godot/imported/storm_sky_0001.png-eb0785bf6a6cff528c69dd3d9716d12d.ctex"]
+source_file="res://Assets/Clouds/storm_clouds_0001.png"
+dest_files=["res://.godot/imported/storm_clouds_0001.png-3c6ffafe2b7f523dc72ccdd2cce422df.ctex"]
 
 [params]
 
