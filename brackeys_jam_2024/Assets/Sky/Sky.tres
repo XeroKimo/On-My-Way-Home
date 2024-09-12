@@ -1,18 +1,18 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dy15uc5p3hhll"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://daxsbfoyxikdo"]
 
-[ext_resource type="Texture2D" uid="uid://jd1o77qqfcx5" path="res://Assets/Sky/storm_sky_0007.png" id="1_sktoe"]
-[ext_resource type="Texture2D" uid="uid://pat7mtcm1j7j" path="res://Assets/Sky/storm_sky_0001.png" id="1_vbpy7"]
-[ext_resource type="Texture2D" uid="uid://8xajgh7wbpr5" path="res://Assets/Sky/storm_sky_0002.png" id="3_iaopv"]
-[ext_resource type="Texture2D" uid="uid://cl2t8x38kr3uj" path="res://Assets/Sky/storm_sky_0003.png" id="4_bs0wa"]
-[ext_resource type="Texture2D" uid="uid://di53tw1awinix" path="res://Assets/Sky/storm_sky_0004.png" id="5_rqj6q"]
-[ext_resource type="Texture2D" uid="uid://cfg4cmj3n0nsm" path="res://Assets/Sky/storm_sky_0005.png" id="6_7d6uc"]
-[ext_resource type="Texture2D" uid="uid://ctf4q8abxh88h" path="res://Assets/Sky/storm_sky_0006.png" id="7_xv8ng"]
+[ext_resource type="Texture2D" uid="uid://jd1o77qqfcx5" path="res://Assets/Sky/storm_sky_0007.png" id="1_dwsuk"]
+[ext_resource type="Texture2D" uid="uid://pat7mtcm1j7j" path="res://Assets/Sky/storm_sky_0001.png" id="2_xy34u"]
+[ext_resource type="Texture2D" uid="uid://8xajgh7wbpr5" path="res://Assets/Sky/storm_sky_0002.png" id="3_jv2kh"]
+[ext_resource type="Texture2D" uid="uid://cl2t8x38kr3uj" path="res://Assets/Sky/storm_sky_0003.png" id="4_ihb2d"]
+[ext_resource type="Texture2D" uid="uid://di53tw1awinix" path="res://Assets/Sky/storm_sky_0004.png" id="5_6qrey"]
+[ext_resource type="Texture2D" uid="uid://cfg4cmj3n0nsm" path="res://Assets/Sky/storm_sky_0005.png" id="6_mam6r"]
+[ext_resource type="Texture2D" uid="uid://ctf4q8abxh88h" path="res://Assets/Sky/storm_sky_0006.png" id="7_jia66"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_sktoe")
+"texture": ExtResource("1_dwsuk")
 }],
 "loop": false,
 "name": &"active",
@@ -20,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vbpy7")
+"texture": ExtResource("2_xy34u")
 }],
 "loop": false,
 "name": &"inactive",
@@ -28,19 +28,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_iaopv")
+"texture": ExtResource("3_jv2kh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_bs0wa")
+"texture": ExtResource("4_ihb2d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rqj6q")
+"texture": ExtResource("5_6qrey")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_7d6uc")
+"texture": ExtResource("6_mam6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xv8ng")
+"texture": ExtResource("7_jia66")
 }],
 "loop": false,
 "name": &"transition",

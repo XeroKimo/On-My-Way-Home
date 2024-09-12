@@ -9,6 +9,7 @@ extends Node2D
 @export var max_speed: float = 600
 @export var acceleration: float = 10
 @onready var sky:= $Sky
+@onready var clouds:= $Sky/Clouds
 
 var speed: float
 var level_parts: Array
@@ -28,6 +29,8 @@ func _ready() -> void:
 	lane_width = ProjectSettings.get_setting("global/lane_width")
 	speed = initial_speed
 	
+	sky.speed_scale = 1.0 / pre_storm_duration_seconds
+	clouds.speed_scale = 1.0 / pre_storm_duration_seconds
 	var child = background.instantiate() as EndlessLevelPart
 	add_child(child)
 	level_parts.push_back(child)
@@ -55,7 +58,7 @@ func _process(delta: float) -> void:
 		print("A storm is brewing")
 		storm_timer_seconds = -pre_storm_duration_seconds
 		sky.play("transition")
-		sky.speed_scale = 1.0 / pre_storm_duration_seconds
+		clouds.play("transition")
 	else:
 		previous_storm_timer_seconds = storm_timer_seconds
 		storm_timer_seconds += delta
@@ -66,12 +69,14 @@ func _process(delta: float) -> void:
 		if storm_timer_seconds >= storm_duration_seconds + pre_storm_duration_seconds:
 			print("Storm has subsided")
 			sky.play("inactive")
+			clouds.play("inactive")
 			storm_brewing = false
 	pass
 	
 func _begin_storm():
 	print("Storm has started")
 	sky.play("active")
+	clouds.play("active")
 	for p in level_parts:
 		var part = p as EndlessLevelPart
 		if part.position.x >= lane_width:
@@ -81,6 +86,7 @@ func _begin_storm():
 func _end_storm():
 	print("Storm has ended")
 	sky.play_backwards("transition")
+	clouds.play_backwards("transition")
 	for p in level_parts:
 		var part = p as EndlessLevelPart
 		part.remove_lava_nodes()
