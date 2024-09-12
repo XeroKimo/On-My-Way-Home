@@ -8,6 +8,7 @@ var old_lane: int = lane
 @export var jump_impulse_force: float = 350
 #I also added this - tj
 @export var jump_duration: float = 1.3
+#end
 @onready var ground_detector := $GroundDetector
 var is_on_ground: bool = false
 
@@ -84,8 +85,6 @@ func _physics_process(delta: float) -> void:
 		else :
 			pass
 	
-		
-
 	else :
 		pass
 	
