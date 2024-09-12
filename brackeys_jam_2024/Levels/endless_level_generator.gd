@@ -8,6 +8,9 @@ extends Node2D
 @export var initial_speed: float = 300
 @export var max_speed: float = 600
 @export var acceleration: float = 10
+@onready var sky:= $Sky/Background
+@onready var clouds:= $Sky/Clouds
+@onready var rain:= $Sky/Rain
 
 var speed: float
 var level_parts: Array
@@ -21,6 +24,7 @@ var previous_storm_timer_seconds: float
 @export var storm_duration_seconds: float = 15
 var storm_in_progress: bool:
 	get: return storm_brewing && storm_timer_seconds >= 0 && storm_timer_seconds <= storm_duration_seconds
+@onready var storm_brewing_timer:= $StormBrewingTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +34,7 @@ func _ready() -> void:
 	var child = background.instantiate() as EndlessLevelPart
 	add_child(child)
 	level_parts.push_back(child)
+	
 	for i in parts_buffer * 2:
 		child = background.instantiate() as EndlessLevelPart
 		add_child(child)
@@ -49,12 +54,20 @@ func _process(delta: float) -> void:
 	_spawn_new_part()
 	speed += acceleration * delta
 	
-	if !storm_brewing:
-		storm_brewing = GameState.random.randf() <= 0.5
-		if storm_brewing:
-			print("A storm is brewing")
-			storm_timer_seconds = -pre_storm_duration_seconds
-	else:
+	#print(storm_brewing_timer.time_left)
+	if !storm_brewing && storm_brewing_timer.time_left == 0:
+		print("Trying to start a storm")
+		#storm_brewing_timer.start()
+		#storm_brewing = GameState.random.randf() <= 0.2
+		storm_brewing = true
+		print("A storm is brewing")
+		storm_timer_seconds = -pre_storm_duration_seconds
+		sky.play("transition")
+		clouds.play("transition")
+		sky.speed_scale = 1.0 / pre_storm_duration_seconds
+		clouds.speed_scale = 1.0 / pre_storm_duration_seconds
+	
+	if storm_brewing:
 		previous_storm_timer_seconds = storm_timer_seconds
 		storm_timer_seconds += delta
 		if previous_storm_timer_seconds < 0 && storm_timer_seconds >=0:
@@ -63,11 +76,17 @@ func _process(delta: float) -> void:
 			_end_storm()
 		if storm_timer_seconds >= storm_duration_seconds + pre_storm_duration_seconds:
 			print("Storm has subsided")
+			sky.play("inactive")
+			clouds.play("inactive")
 			storm_brewing = false
+			storm_brewing_timer.start()
 	pass
 	
 func _begin_storm():
 	print("Storm has started")
+	sky.play("active")
+	clouds.play("active")
+	rain.visible = true
 	for p in level_parts:
 		var part = p as EndlessLevelPart
 		if part.position.x >= lane_width:
@@ -76,6 +95,11 @@ func _begin_storm():
 	
 func _end_storm():
 	print("Storm has ended")
+	sky.speed_scale = 1.0
+	clouds.speed_scale = 1.0
+	sky.play_backwards("transition")
+	clouds.play_backwards("transition")
+	rain.visible = false
 	for p in level_parts:
 		var part = p as EndlessLevelPart
 		part.remove_lava_nodes()

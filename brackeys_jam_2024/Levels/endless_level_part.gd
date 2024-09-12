@@ -64,8 +64,7 @@ func spawn_lava_nodes(lava_nodes: Array):
 func remove_lava_nodes():
 	for i in _lane_proxies.size():
 		for child in _get_lane(i).get_children():
-			if child.get_meta("type") == "lava":
-				print("lava found")
+			if child.has_meta("type") && child.get_meta("type") == "lava":
 				child.queue_free()
 		
 
