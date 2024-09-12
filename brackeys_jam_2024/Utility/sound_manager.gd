@@ -52,3 +52,13 @@ func play_lane_switch_up():
 
 func play_lane_switch_down():
 	$SFX/Player_Lane_Switch_Down.play()
+
+#Collisions
+func play_bonk_collision():
+	$SFX/Collision_Bonk.play()
+	
+func play_splash_collision():
+	$SFX/Collision_Splash.play()
+
+func play_collision():
+	play_test_1()
