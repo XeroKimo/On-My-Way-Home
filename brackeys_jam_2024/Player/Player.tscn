@@ -21,6 +21,7 @@ position = Vector2(-6, -50)
 sprite_frames = ExtResource("3_oorys")
 animation = &"default_walk"
 autoplay = "default_walk"
+frame_progress = 0.362129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -63.5)

@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cgixq7ekf8oc" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Animal_Gulls_Loop.wav" id="5_o05xu"]
 [ext_resource type="AudioStream" uid="uid://b02tjfn7h8xrv" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Water_Waves_Loop.wav" id="6_gsyb4"]
 [ext_resource type="AudioStream" uid="uid://cdiq1enkpxkj5" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Water_Hiss_Loop.wav" id="7_2sehs"]
-[ext_resource type="AudioStream" uid="uid://k6s36c35h70e" path="res://Assets/Audio/MUS/MUS_Lo-Fi.wav" id="8_cv1ap"]
+[ext_resource type="AudioStream" uid="uid://bteq4jlsbcia5" path="res://Assets/Audio/MUS/MUS_Placeholder_Loop.wav" id="8_cticm"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_juuta")
@@ -37,6 +37,6 @@ stream = ExtResource("7_2sehs")
 [node name="Music" type="Node" parent="."]
 
 [node name="MUS_Calm" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("8_cv1ap")
+stream = ExtResource("8_cticm")
 
 [node name="SFX" type="Node" parent="."]
