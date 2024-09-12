@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c0xd8vg0obynt"]
+[gd_scene load_steps=38 format=3 uid="uid://c0xd8vg0obynt"]
 
 [ext_resource type="Script" path="res://Utility/sound_manager.gd" id="1_juuta"]
 [ext_resource type="AudioStream" uid="uid://dfmn8ha74ml0a" path="res://Assets/Audio/Test_Sine-001.wav" id="2_ih3r5"]
@@ -24,6 +24,12 @@
 [ext_resource type="AudioStream" uid="uid://bsiocm36wiis0" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-002.wav" id="22_7qggn"]
 [ext_resource type="AudioStream" uid="uid://c8erj7muuhqyj" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-003.wav" id="23_34s5w"]
 [ext_resource type="AudioStream" uid="uid://b4xcsbxmhxf1a" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-004.wav" id="24_iuw73"]
+[ext_resource type="AudioStream" uid="uid://cdjfi23t4xf7t" path="res://Assets/Audio/SFX/Player_SFX/Bonk /SFX_Movement_Player_Bonk _Mixed-001.wav" id="25_wotv6"]
+[ext_resource type="AudioStream" uid="uid://csxk1cin0ode7" path="res://Assets/Audio/SFX/Player_SFX/Bonk /SFX_Movement_Player_Bonk _Mixed-002.wav" id="26_2k7w8"]
+[ext_resource type="AudioStream" uid="uid://c344d1binav1o" path="res://Assets/Audio/SFX/Player_SFX/Bonk /SFX_Movement_Player_Bonk _Mixed-003.wav" id="27_nqc8r"]
+[ext_resource type="AudioStream" uid="uid://c37o3opssuxqq" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-001.wav" id="28_g8b7w"]
+[ext_resource type="AudioStream" uid="uid://bqjqp7auuyi07" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-002.wav" id="29_n0y58"]
+[ext_resource type="AudioStream" uid="uid://mxewwsbexncw" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-003.wav" id="30_fwqqc"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4oscm"]
 random_pitch = 1.14
@@ -65,6 +71,18 @@ stream_0/stream = ExtResource("21_r7tqk")
 stream_1/stream = ExtResource("22_7qggn")
 stream_2/stream = ExtResource("23_34s5w")
 stream_3/stream = ExtResource("24_iuw73")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kkbvj"]
+streams_count = 3
+stream_0/stream = ExtResource("25_wotv6")
+stream_1/stream = ExtResource("26_2k7w8")
+stream_2/stream = ExtResource("27_nqc8r")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gthii"]
+streams_count = 3
+stream_0/stream = ExtResource("28_g8b7w")
+stream_1/stream = ExtResource("29_n0y58")
+stream_2/stream = ExtResource("30_fwqqc")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_juuta")
@@ -125,3 +143,9 @@ volume_db = 6.0
 stream = SubResource("AudioStreamRandomizer_qofkv")
 volume_db = 6.0
 bus = &"SFX"
+
+[node name="Collision_Bonk" type="AudioStreamPlayer" parent="SFX"]
+stream = SubResource("AudioStreamRandomizer_kkbvj")
+
+[node name="Collision_Splash" type="AudioStreamPlayer" parent="SFX"]
+stream = SubResource("AudioStreamRandomizer_gthii")
