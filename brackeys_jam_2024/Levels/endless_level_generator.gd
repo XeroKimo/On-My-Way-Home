@@ -67,8 +67,6 @@ func _process(delta: float) -> void:
 		sky.speed_scale = 1.0 / pre_storm_duration_seconds
 		clouds.speed_scale = 1.0 / pre_storm_duration_seconds
 	
-		
-		
 	if storm_brewing:
 		previous_storm_timer_seconds = storm_timer_seconds
 		storm_timer_seconds += delta
