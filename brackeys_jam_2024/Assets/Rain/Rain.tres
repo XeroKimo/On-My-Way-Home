@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://yb2k07beoexj"]
+
+[ext_resource type="Texture2D" uid="uid://bgnfosc21j662" path="res://Assets/Rain/rain_0001.png" id="1_gxm18"]
+[ext_resource type="Texture2D" uid="uid://c2kkvmixc06dh" path="res://Assets/Rain/rain_0002.png" id="2_ylpop"]
+[ext_resource type="Texture2D" uid="uid://d1u56ja4h6mgo" path="res://Assets/Rain/rain_0003.png" id="3_yqs4k"]
+[ext_resource type="Texture2D" uid="uid://com4sw11sybhl" path="res://Assets/Rain/rain_0004.png" id="4_o83e2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gxm18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ylpop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yqs4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o83e2")
+}],
+"loop": true,
+"name": &"raining",
+"speed": 8.0
+}]
