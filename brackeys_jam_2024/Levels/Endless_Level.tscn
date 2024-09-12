@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://ddgkp3dgel6wr"]
+
+[ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
+[ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
+[ext_resource type="PackedScene" uid="uid://cal2k0qfth8px" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
+[ext_resource type="Texture2D" uid="uid://pat7mtcm1j7j" path="res://Assets/storm_sky_0001.png" id="2_lmko4"]
+[ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="3_4plmr"]
+[ext_resource type="PackedScene" uid="uid://ccwomfon81oh5" path="res://Utility/background.tscn" id="3_r5d8s"]
+[ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
+[ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
+[ext_resource type="PackedScene" uid="uid://bo0huhmlv4v03" path="res://Obstacles/Lava/lava_single.tscn" id="6_u1lef"]
+[ext_resource type="Texture2D" uid="uid://bghm5s8x2lii7" path="res://Assets/storm_clouds_0001.png" id="8_6j74r"]
+[ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="9_r7xli"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
+
+[node name="Endless Level" type="Node2D"]
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("1_qpv6c")
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture = ExtResource("2_lmko4")
+centered = false
+
+[node name="Clouds" type="Sprite2D" parent="Sky"]
+texture = ExtResource("8_6j74r")
+centered = false
+
+[node name="Level Elements" type="Node2D" parent="."]
+script = ExtResource("2_jc88d")
+background = ExtResource("2_jioax")
+obstacles = [ExtResource("3_4plmr"), ExtResource("5_kpd41")]
+lava_obstacles = [ExtResource("6_u1lef")]
+initial_speed = 600.0
+max_speed = 1200.0
+acceleration = 20.0
+
+[node name="Background" parent="Level Elements" instance=ExtResource("3_r5d8s")]
+visible = false
+position = Vector2(0, 0)
+centered = false
+
+[node name="Lane 1" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 1"]
+shape = SubResource("WorldBoundaryShape2D_q6xcp")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 1"]
+
+[node name="Lane 2" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 975)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 2"]
+shape = SubResource("WorldBoundaryShape2D_q6xcp")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 2"]
+
+[node name="Lane 3" type="StaticBody2D" parent="Level Elements"]
+position = Vector2(0, 1250)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 3"]
+shape = SubResource("WorldBoundaryShape2D_q6xcp")
+
+[node name="Obstacles" type="Node2D" parent="Level Elements/Lane 3"]
+
+[node name="Player" parent="." instance=ExtResource("4_6v4xi")]
+position = Vector2(160, 975)
+lane_offset = 275.0
+jump_impulse_force = 450.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 636)
+zoom = Vector2(0.6, 0.51)
+
+[node name="Sound_Manager" parent="." instance=ExtResource("9_r7xli")]

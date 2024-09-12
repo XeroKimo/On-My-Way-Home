@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys_Jam_2024"
-run/main_scene="res://Levels/Level_1.tscn"
+run/main_scene="res://Levels/Endless_Level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,12 @@ GameState="*res://Levels/game_state.gd"
 [display]
 
 window/stretch/mode="viewport"
+
+[global]
+
+cell_count=4
+lane_width=1920
+obstalce_spawn_chance=0.5
 
 [input]
 
