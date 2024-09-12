@@ -38,12 +38,17 @@ func play_storm_amb():
 	pass
 
 #SFX
+func play_footstep():
+	$SFX/Player_FS.play()
 
 func play_jump():
-	play_test_2()
+	$SFX/Player_Jump.play()
 
 func play_slide():
-	play_test_2()
+	$SFX/Player_Slide.play()
 	
-func play_lane_switch():
-	play_test_1()
+func play_lane_switch_up():
+	$SFX/Player_Lane_Switch_Up.play()
+
+func play_lane_switch_down():
+	$SFX/Player_Lane_Switch_Down.play()

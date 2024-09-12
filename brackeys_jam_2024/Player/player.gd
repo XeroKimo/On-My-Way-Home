@@ -33,10 +33,10 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("lane_down") && lane < 2:
 		lane += 1
-		$Sound_Manager.play_lane_switch()
+		$Sound_Manager.play_lane_switch_down()
 	if event.is_action_pressed("lane_up") && lane > 0:
 		lane -= 1
-		$Sound_Manager.play_lane_switch()
+		$Sound_Manager.play_lane_switch_up()
 	if event.is_action_pressed("jump") && is_on_ground:
 		stop_sliding()
 		apply_central_impulse(Vector2.UP * jump_impulse_force)
