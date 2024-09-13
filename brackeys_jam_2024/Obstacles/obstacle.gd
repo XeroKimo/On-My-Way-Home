@@ -1,7 +1,7 @@
 class_name Obstacle
 extends Area2D
 @export var audio_stream : AudioStream
-@onready var sound_manager: Node = $"../../../../Sound_Manager"
+@onready var sound_manager: Node = $"../../../../../Sound_Manager"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
