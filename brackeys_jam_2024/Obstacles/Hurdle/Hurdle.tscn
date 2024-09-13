@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bk3fwk1j33tmr"]
 
 [ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_suwo0"]
-[ext_resource type="AudioStream" uid="uid://cdjfi23t4xf7t" path="res://Assets/Audio/SFX/Player_SFX/Bonk /SFX_Movement_Player_Bonk _Mixed-001.wav" id="2_1b68k"]
+[ext_resource type="AudioStream" uid="uid://cdjfi23t4xf7t" path="res://Assets/Audio/SFX/Player_SFX/Bonk/SFX_Movement_Player_Bonk_Mixed-001.wav" id="2_1b68k"]
 [ext_resource type="Texture2D" uid="uid://784l6yhud2r1" path="res://Obstacles/Hurdle/Hurdle.png" id="2_3jhu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_allp4"]
