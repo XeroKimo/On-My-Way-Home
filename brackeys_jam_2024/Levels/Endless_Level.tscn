@@ -1,17 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddgkp3dgel6wr"]
+[gd_scene load_steps=18 format=3 uid="uid://ddgkp3dgel6wr"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
 [ext_resource type="SpriteFrames" uid="uid://dy15uc5p3hhll" path="res://Assets/Clouds/Clouds.tres" id="2_ghqmb"]
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
-[ext_resource type="PackedScene" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
+[ext_resource type="PackedScene" uid="uid://cal2k0qfth8px" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
 [ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="3_4plmr"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
 [ext_resource type="PackedScene" uid="uid://bo0huhmlv4v03" path="res://Obstacles/Lava/lava_single.tscn" id="6_u1lef"]
 [ext_resource type="SpriteFrames" uid="uid://daxsbfoyxikdo" path="res://Assets/Sky/Sky.tres" id="8_el0rj"]
+[ext_resource type="Texture2D" uid="uid://2wygydg4krsl" path="res://Player/shadow_2.png" id="8_fmaep"]
+[ext_resource type="Texture2D" uid="uid://d2rplw00jq8jk" path="res://Player/shadow_3.png" id="9_57maq"]
 [ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="9_r7xli"]
 [ext_resource type="SpriteFrames" uid="uid://yb2k07beoexj" path="res://Assets/Rain/Rain.tres" id="9_td7dt"]
+[ext_resource type="Texture2D" uid="uid://bseaf16ovi1vd" path="res://Player/shadow.png" id="10_p8y5m"]
 [ext_resource type="Texture2D" uid="uid://yqdc13kb1s5p" path="res://Assets/White.png" id="12_k2vnx"]
+[ext_resource type="Script" path="res://Levels/score.gd" id="13_dt6do"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
@@ -29,6 +33,8 @@ initial_speed = 600.0
 max_speed = 1200.0
 acceleration = 20.0
 pre_storm_duration_seconds = 8.0
+shadow_array = [ExtResource("10_p8y5m"), ExtResource("8_fmaep"), ExtResource("9_57maq")]
+shadow_heights = [20.0, 40.0]
 
 [node name="StormBrewingTimer" type="Timer" parent="Level Elements"]
 wait_time = 10.0
@@ -57,7 +63,7 @@ centered = false
 [node name="Background" type="Node2D" parent="Level Elements"]
 
 [node name="Lane 1" type="StaticBody2D" parent="Level Elements"]
-position = Vector2(0, 700)
+position = Vector2(0, 630)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 1"]
 shape = SubResource("WorldBoundaryShape2D_q6xcp")
@@ -65,7 +71,7 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 1"]
 
 [node name="Lane 2" type="StaticBody2D" parent="Level Elements"]
-position = Vector2(0, 975)
+position = Vector2(0, 905)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 2"]
@@ -74,7 +80,7 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 2"]
 
 [node name="Lane 3" type="StaticBody2D" parent="Level Elements"]
-position = Vector2(0, 1250)
+position = Vector2(0, 1180)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level Elements/Lane 3"]
@@ -82,8 +88,12 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 3"]
 
+[node name="Player Shadow" type="Sprite2D" parent="Level Elements"]
+position = Vector2(160, 960)
+texture = ExtResource("10_p8y5m")
+
 [node name="Player" parent="Level Elements" instance=ExtResource("4_6v4xi")]
-position = Vector2(160, 975)
+position = Vector2(160, 905)
 lane_offset = 275.0
 jump_impulse_force = 450.0
 
@@ -98,3 +108,13 @@ position = Vector2(960, 636)
 zoom = Vector2(0.6, 0.51)
 
 [node name="Sound_Manager" parent="." instance=ExtResource("9_r7xli")]
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 25.0
+offset_top = 21.0
+offset_right = 359.0
+offset_bottom = 81.0
+theme_override_colors/default_color = Color(1, 0.655717, 0.21986, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Distance:"
+script = ExtResource("13_dt6do")

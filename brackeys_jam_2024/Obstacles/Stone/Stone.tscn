@@ -14,7 +14,7 @@ script = ExtResource("1_t6qup")
 audio_stream = ExtResource("2_3im8x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4, -49)
+position = Vector2(-4, -4)
 texture = ExtResource("2_t3mi8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
