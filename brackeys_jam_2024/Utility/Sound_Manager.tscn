@@ -165,3 +165,5 @@ stream = SubResource("AudioStreamRandomizer_gthii")
 
 [node name="Thunder_Crack" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("34_vm782")
+
+[node name="Game_Over" type="AudioStreamPlayer" parent="SFX"]

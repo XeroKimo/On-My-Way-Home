@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://1jp44btm0wpb"]
+[gd_scene load_steps=5 format=3 uid="uid://1jp44btm0wpb"]
 
 [ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_0lhhj"]
+[ext_resource type="AudioStream" uid="uid://c37o3opssuxqq" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-001.wav" id="2_sd0aw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3qpqp"]
 
@@ -11,6 +12,7 @@ size = Vector2(235, 57.5)
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_0lhhj")
+audio_stream = ExtResource("2_sd0aw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

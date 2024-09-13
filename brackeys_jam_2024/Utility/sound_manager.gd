@@ -72,8 +72,9 @@ func play_collision_bonk():
 func play_collision_splash():
 	$SFX/Collision_Splash.play()
 
-func play_collision():
-	play_test_1()
+func play_collision(stream: AudioStream):
+	$SFX/Game_Over.stream = stream
+	$SFX/Game_Over.play()
 
 #Storm
 func play_thunder():
