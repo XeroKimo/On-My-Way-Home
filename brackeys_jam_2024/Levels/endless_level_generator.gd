@@ -34,6 +34,9 @@ var storm_in_progress: bool:
 	get: return storm_brewing && storm_timer_seconds >= 0 && storm_timer_seconds <= storm_duration_seconds
 @onready var storm_brewing_timer:= $StormBrewingTimer
 
+@export var shadow_array: Array
+@export var shadow_heights: Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lane_width = ProjectSettings.get_setting("global/lane_width")
@@ -58,6 +61,15 @@ func _process(delta: float) -> void:
 	if GameState.game_ended:
 		return
 		
+	$"Player Shadow".position.x = $Player.position.x
+	$"Player Shadow".position.y = lanes[$Player.lane].position.y - 15
+	var texture: Texture2D = shadow_array[0] as Texture2D
+	var player_height = (lanes[$Player.lane].position.y - $Player.position.y)
+	print(player_height)
+	for i in shadow_array.size() - 1:
+		if player_height >= (shadow_heights[i] as float):
+			texture = shadow_array[i + 1]
+	$"Player Shadow".texture = texture
 	var distance_traveled =  speed * delta
 	for part: EndlessLevelPart in level_parts:
 		part.position.x -= distance_traveled
