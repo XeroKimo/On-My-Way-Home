@@ -3,20 +3,20 @@ extends Node2D
 @export var background: PackedScene
 @export var obstacles: Array
 @export var lava_obstacles: Array
-@onready var lanes = [$"Lane 1", $"Lane 2", $"Lane 3"]
+@onready var lanes = [$"Level Elements/Lane 1", $"Level Elements/Lane 2", $"Level Elements/Lane 3"]
 
 @export var initial_speed: float = 300
 @export var max_speed: float = 600
 @export var acceleration: float = 10
 
-@onready var background_container:= $Background
-@onready var sky:= $Sky/Background
-@onready var clouds:= $Sky/Clouds
-@onready var rain:= $Sky/Rain
-@onready var flash:= $Flash
+@onready var background_container:= $"Level Elements/Background"
+@onready var sky:= $"Level Elements/Sky/Background"
+@onready var clouds:= $"Level Elements/Sky/Clouds"
+@onready var rain:= $"Level Elements/Sky/Rain"
+@onready var flash:= $"Level Elements/Flash"
 
 #Sound
-@onready var sound_manager: Node2D = $"../Sound_Manager"
+@onready var sound_manager: Node2D = $Sound_Manager
 #Sound
 
 var speed: float
@@ -32,13 +32,17 @@ var previous_storm_timer_seconds: float
 @export var storm_duration_seconds: float = 15
 var storm_in_progress: bool:
 	get: return storm_brewing && storm_timer_seconds >= 0 && storm_timer_seconds <= storm_duration_seconds
-@onready var storm_brewing_timer:= $StormBrewingTimer
+@onready var storm_brewing_timer:= $"Level Elements/StormBrewingTimer"
 
 @export var shadow_array: Array
 @export var shadow_heights: Array
 
 # Called when the node enters the scene tree for the first time.
+func _on_game_ended():
+	$GameOver.visible = true
+
 func _ready() -> void:
+	GameState.on_game_ended.connect(_on_game_ended)
 	lane_width = ProjectSettings.get_setting("global/lane_width")
 	speed = initial_speed
 	
@@ -55,21 +59,25 @@ func _ready() -> void:
 		child.position.x = lane_width * (i + 1)
 	pass # Replace with function body.
 
+func free() -> void:
+	GameState.on_game_ended.disconnect(_on_game_ended)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GameState.game_ended:
 		return
-		
-	$"Player Shadow".position.x = $Player.position.x
-	$"Player Shadow".position.y = lanes[$Player.lane].position.y - 15
+	
+	var player_shadow:= $"Level Elements/Player Shadow"
+	var player:=$"Level Elements/Player"
+	player_shadow.position.x = player.position.x
+	player_shadow.position.y = lanes[player.lane].position.y - 15
 	var texture: Texture2D = shadow_array[0] as Texture2D
-	var player_height = (lanes[$Player.lane].position.y - $Player.position.y)
+	var player_height = (lanes[player.lane].position.y - player.position.y)
 	#print(player_height)
 	for i in shadow_array.size() - 1:
 		if player_height >= (shadow_heights[i] as float):
 			texture = shadow_array[i + 1]
-	$"Player Shadow".texture = texture
+	player_shadow.texture = texture
 	var distance_traveled =  speed * delta
 	for part: EndlessLevelPart in level_parts:
 		part.position.x -= distance_traveled
