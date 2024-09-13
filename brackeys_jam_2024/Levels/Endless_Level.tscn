@@ -15,6 +15,7 @@
 [ext_resource type="SpriteFrames" uid="uid://yb2k07beoexj" path="res://Assets/Rain/Rain.tres" id="9_td7dt"]
 [ext_resource type="Texture2D" uid="uid://bseaf16ovi1vd" path="res://Player/shadow.png" id="10_p8y5m"]
 [ext_resource type="Texture2D" uid="uid://yqdc13kb1s5p" path="res://Assets/White.png" id="12_k2vnx"]
+[ext_resource type="Script" path="res://Levels/score.gd" id="13_dt6do"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
@@ -107,3 +108,13 @@ position = Vector2(960, 636)
 zoom = Vector2(0.6, 0.51)
 
 [node name="Sound_Manager" parent="." instance=ExtResource("9_r7xli")]
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 25.0
+offset_top = 21.0
+offset_right = 359.0
+offset_bottom = 81.0
+theme_override_colors/default_color = Color(1, 0.655717, 0.21986, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Distance:"
+script = ExtResource("13_dt6do")
