@@ -19,13 +19,13 @@
 [ext_resource type="AudioStream" uid="uid://bcuukmuimyajr" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-002.wav" id="14_5hp01"]
 [ext_resource type="AudioStream" uid="uid://bf00b0yu3vmrt" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-003.wav" id="15_6s0f3"]
 [ext_resource type="AudioStream" uid="uid://dw2mlx8wh827k" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-004.wav" id="16_foslb"]
-[ext_resource type="AudioStream" uid="uid://d0dwkh3byhmqt" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed_Down-001.wav" id="17_ann6u"]
-[ext_resource type="AudioStream" uid="uid://b8864nxd4lmfh" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed_Down-002.wav" id="18_eyyno"]
-[ext_resource type="AudioStream" uid="uid://b5o1y0v2rieup" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed_up-001.wav" id="19_s8l65"]
-[ext_resource type="AudioStream" uid="uid://b6vjgjhnv2ns" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed_up-002.wav" id="20_6erw3"]
+[ext_resource type="AudioStream" uid="uid://cya3thoe4srjd" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed-001.wav" id="20_iw7eg"]
+[ext_resource type="AudioStream" uid="uid://cthhxf2qdugjd" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed-004.wav" id="21_j8x0a"]
 [ext_resource type="AudioStream" uid="uid://d3go886lk6ll0" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-001.wav" id="21_r7tqk"]
+[ext_resource type="AudioStream" uid="uid://dacwu7vxdegrh" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed-002.wav" id="22_1s605"]
 [ext_resource type="AudioStream" uid="uid://bsiocm36wiis0" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-002.wav" id="22_7qggn"]
 [ext_resource type="AudioStream" uid="uid://c8erj7muuhqyj" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-003.wav" id="23_34s5w"]
+[ext_resource type="AudioStream" uid="uid://b6u1f3a11u18c" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed-003.wav" id="23_itfa6"]
 [ext_resource type="AudioStream" uid="uid://b4xcsbxmhxf1a" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-004.wav" id="24_iuw73"]
 [ext_resource type="AudioStream" uid="uid://cdjfi23t4xf7t" path="res://Assets/Audio/SFX/Player_SFX/Bonk/SFX_Movement_Player_Bonk_Mixed-001.wav" id="25_wotv6"]
 [ext_resource type="AudioStream" uid="uid://csxk1cin0ode7" path="res://Assets/Audio/SFX/Player_SFX/Bonk/SFX_Movement_Player_Bonk_Mixed-002.wav" id="26_2k7w8"]
@@ -57,15 +57,15 @@ stream_3/stream = ExtResource("16_foslb")
 random_pitch = 1.14
 random_volume_offset_db = 0.37
 streams_count = 2
-stream_0/stream = ExtResource("17_ann6u")
-stream_1/stream = ExtResource("18_eyyno")
+stream_0/stream = ExtResource("20_iw7eg")
+stream_1/stream = ExtResource("21_j8x0a")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xe27i"]
 random_pitch = 1.14
 random_volume_offset_db = 0.37
 streams_count = 2
-stream_0/stream = ExtResource("19_s8l65")
-stream_1/stream = ExtResource("20_6erw3")
+stream_0/stream = ExtResource("22_1s605")
+stream_1/stream = ExtResource("23_itfa6")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qofkv"]
 random_pitch = 1.14
@@ -145,12 +145,14 @@ bus = &"SFX"
 
 [node name="Player_Lane_Switch_Down" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_ng38k")
-volume_db = 6.0
+volume_db = -8.0
+pitch_scale = 0.8
 bus = &"SFX"
 
 [node name="Player_Lane_Switch_Up" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_xe27i")
-volume_db = 6.0
+volume_db = -8.0
+pitch_scale = 0.8
 
 [node name="Player_Slide" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_qofkv")
