@@ -19,6 +19,7 @@ var original_collider_y_pos: float
 var original_collider_height: float
 var sliding_queued: bool = false
 var sliding_timer: float = 0
+var previous_sliding_timer: float = 0
 var sliding: bool:
 	get: return sliding_timer > 0
 
@@ -84,8 +85,13 @@ func stop_sliding():
 func _physics_process(delta: float) -> void:
 	is_on_ground = linear_velocity.y <= 0 && ground_detector.is_colliding()
 	
+	previous_sliding_timer = sliding_timer
 	if sliding:
 		sliding_timer -= delta;
+	
+	if sliding_timer <= 0 && previous_sliding_timer > 0:
+		stop_sliding()	
+	
 	#janky walk sounds -tj
 	if !previous_is_on_ground && is_on_ground:
 		animator.play("default_walk")

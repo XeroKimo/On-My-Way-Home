@@ -15,7 +15,7 @@ audio_stream = ExtResource("2_oib5k")
 metadata/type = "lava"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -116)
+position = Vector2(0, -71)
 texture = ExtResource("3_1dfg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
