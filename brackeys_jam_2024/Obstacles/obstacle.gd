@@ -1,6 +1,7 @@
 class_name Obstacle
-
 extends Area2D
+@export var audio_stream : AudioStream
+@onready var sound_manager: Node = $"../../../../Sound_Manager"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,9 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if (body as CollisionObject2D).collision_mask & collision_layer == 0:
 		return
+	#Collision Test
+	sound_manager.play_collision(audio_stream)
+	#end
 	GameState.end_game()
 	print("some body entered ", body.name)
 	pass # Replace with function body.

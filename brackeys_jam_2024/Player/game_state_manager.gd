@@ -4,6 +4,7 @@ extends Node
 @onready var sound_manager: Node2D = $"../Sound_Manager"
 @export var invincible_mode: bool
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sound_manager.play_calm_amb()
@@ -19,4 +20,6 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	pass
+	

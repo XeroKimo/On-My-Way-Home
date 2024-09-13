@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceklpqo1b0pph"]
+[gd_scene load_steps=5 format=3 uid="uid://ceklpqo1b0pph"]
 
 [ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_t6qup"]
+[ext_resource type="AudioStream" uid="uid://csxk1cin0ode7" path="res://Assets/Audio/SFX/Player_SFX/Bonk /SFX_Movement_Player_Bonk _Mixed-002.wav" id="2_3im8x"]
 [ext_resource type="Texture2D" uid="uid://bq6bghyr5i6u" path="res://Obstacles/Stone/Stone.png" id="2_t3mi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_allp4"]
@@ -10,6 +11,7 @@ size = Vector2(203, 50)
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_t6qup")
+audio_stream = ExtResource("2_3im8x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4, -49)

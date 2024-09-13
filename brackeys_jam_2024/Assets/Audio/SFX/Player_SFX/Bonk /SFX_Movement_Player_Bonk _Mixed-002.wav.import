@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csxk1cin0ode7"
+path="res://.godot/imported/SFX_Movement_Player_Bonk _Mixed-002.wav-7aff7dcd79dbc6a22d8e9e1eb28e66ec.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Player_SFX/Bonk /SFX_Movement_Player_Bonk _Mixed-002.wav"
+dest_files=["res://.godot/imported/SFX_Movement_Player_Bonk _Mixed-002.wav-7aff7dcd79dbc6a22d8e9e1eb28e66ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
