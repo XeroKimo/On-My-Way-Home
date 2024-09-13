@@ -118,12 +118,15 @@ bus = &"AMB"
 
 [node name="AMB_Storm_Noise" type="AudioStreamPlayer" parent="Ambiences"]
 stream = ExtResource("8_w3dtk")
+bus = &"AMB"
 
 [node name="AMB_Storm_Droplets" type="AudioStreamPlayer" parent="Ambiences"]
 stream = ExtResource("9_vkug3")
+bus = &"AMB"
 
 [node name="AMB_Storm_Running" type="AudioStreamPlayer" parent="Ambiences"]
 stream = ExtResource("10_ji00t")
+bus = &"AMB"
 
 [node name="Music" type="Node" parent="."]
 
@@ -145,13 +148,13 @@ bus = &"SFX"
 
 [node name="Player_Lane_Switch_Down" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_ng38k")
-volume_db = -8.0
+volume_db = -12.0
 pitch_scale = 0.8
 bus = &"SFX"
 
 [node name="Player_Lane_Switch_Up" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_xe27i")
-volume_db = -8.0
+volume_db = -12.0
 pitch_scale = 0.8
 
 [node name="Player_Slide" type="AudioStreamPlayer" parent="SFX"]
@@ -167,7 +170,8 @@ stream = SubResource("AudioStreamRandomizer_gthii")
 
 [node name="Thunder_Crack" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("34_vm782")
-volume_db = -6.0
+volume_db = -12.0
+bus = &"SFX"
 
 [node name="Game_Over" type="AudioStreamPlayer" parent="SFX"]
 bus = &"SFX"
