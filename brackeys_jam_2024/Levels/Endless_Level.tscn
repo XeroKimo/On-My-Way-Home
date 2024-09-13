@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d2rplw00jq8jk" path="res://Player/shadow_3.png" id="9_57maq"]
 [ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="9_r7xli"]
 [ext_resource type="SpriteFrames" uid="uid://yb2k07beoexj" path="res://Assets/Rain/Rain.tres" id="9_td7dt"]
+[ext_resource type="PackedScene" uid="uid://4rsbr25cfnql" path="res://Assets/Game_Over/GameOver.tscn" id="10_6jffq"]
 [ext_resource type="Texture2D" uid="uid://bseaf16ovi1vd" path="res://Player/shadow.png" id="10_p8y5m"]
 [ext_resource type="Texture2D" uid="uid://yqdc13kb1s5p" path="res://Assets/White.png" id="12_k2vnx"]
 [ext_resource type="Script" path="res://Levels/score.gd" id="13_dt6do"]
@@ -20,11 +21,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
 [node name="Endless Level" type="Node2D"]
-
-[node name="GameStateManager" type="Node" parent="."]
-script = ExtResource("1_qpv6c")
-
-[node name="Level Elements" type="Node2D" parent="."]
 script = ExtResource("2_jc88d")
 background = ExtResource("2_jioax")
 obstacles = [ExtResource("3_4plmr"), ExtResource("5_kpd41")]
@@ -35,6 +31,11 @@ acceleration = 20.0
 pre_storm_duration_seconds = 8.0
 shadow_array = [ExtResource("10_p8y5m"), ExtResource("8_fmaep"), ExtResource("9_57maq")]
 shadow_heights = [20.0, 40.0]
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("1_qpv6c")
+
+[node name="Level Elements" type="Node2D" parent="."]
 
 [node name="StormBrewingTimer" type="Timer" parent="Level Elements"]
 wait_time = 10.0
@@ -118,3 +119,6 @@ theme_override_colors/default_color = Color(1, 0.655717, 0.21986, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Distance:"
 script = ExtResource("13_dt6do")
+
+[node name="GameOver" parent="." instance=ExtResource("10_6jffq")]
+visible = false

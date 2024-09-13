@@ -12,6 +12,9 @@ var game_ended: bool:
 var invincible_mode: bool = false
 
 var distance: float
+var score: int:
+	get: return (distance / 100) as int 
+var highscore: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +33,8 @@ func reset_game() -> void:
 func end_game() -> void:
 	if invincible_mode:
 		return
-	print("Distance traveled: ", (distance as int) / 100)
+	print("Distance traveled: ", score)
+	if score > highscore:
+		highscore = score
 	_game_ended = true
 	on_game_ended.emit()
