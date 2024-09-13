@@ -1,12 +1,21 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://daxsbfoyxikdo"]
+[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://daxsbfoyxikdo"]
 
 [ext_resource type="Texture2D" uid="uid://jd1o77qqfcx5" path="res://Assets/Sky/storm_sky_0007.png" id="1_dwsuk"]
 [ext_resource type="Texture2D" uid="uid://pat7mtcm1j7j" path="res://Assets/Sky/storm_sky_0001.png" id="2_xy34u"]
 [ext_resource type="Texture2D" uid="uid://8xajgh7wbpr5" path="res://Assets/Sky/storm_sky_0002.png" id="3_jv2kh"]
+[ext_resource type="Texture2D" uid="uid://b76784gwvsypl" path="res://Assets/Sky/lightning_0001.png" id="3_nnqyi"]
+[ext_resource type="Texture2D" uid="uid://baojmgiy1prqi" path="res://Assets/Sky/lightning_0002.png" id="4_alssh"]
 [ext_resource type="Texture2D" uid="uid://cl2t8x38kr3uj" path="res://Assets/Sky/storm_sky_0003.png" id="4_ihb2d"]
 [ext_resource type="Texture2D" uid="uid://di53tw1awinix" path="res://Assets/Sky/storm_sky_0004.png" id="5_6qrey"]
+[ext_resource type="Texture2D" uid="uid://ctbbef87e15u8" path="res://Assets/Sky/lightning_0003.png" id="5_ptyoc"]
 [ext_resource type="Texture2D" uid="uid://cfg4cmj3n0nsm" path="res://Assets/Sky/storm_sky_0005.png" id="6_mam6r"]
+[ext_resource type="Texture2D" uid="uid://dpf1cs0aqcoh7" path="res://Assets/Sky/lightning_0004.png" id="6_tun66"]
+[ext_resource type="Texture2D" uid="uid://bl2ap6uv1p8jg" path="res://Assets/Sky/lightning_0005.png" id="7_gfngx"]
 [ext_resource type="Texture2D" uid="uid://ctf4q8abxh88h" path="res://Assets/Sky/storm_sky_0006.png" id="7_jia66"]
+[ext_resource type="Texture2D" uid="uid://c2p3bap4aqyse" path="res://Assets/Sky/lightning_0006.png" id="8_r6b88"]
+[ext_resource type="Texture2D" uid="uid://c6ngqkqnxxrml" path="res://Assets/Sky/lightning_0007.png" id="9_f1xmn"]
+[ext_resource type="Texture2D" uid="uid://8xpcncau03kn" path="res://Assets/Sky/lightning_0008.png" id="10_fgaov"]
+[ext_resource type="Texture2D" uid="uid://ehru7bjto704" path="res://Assets/Sky/lightning_0009.png" id="11_pjwjl"]
 
 [resource]
 animations = [{
@@ -25,6 +34,65 @@ animations = [{
 "loop": false,
 "name": &"inactive",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nnqyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_alssh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ptyoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tun66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gfngx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r6b88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f1xmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fgaov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pjwjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nnqyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_alssh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ptyoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tun66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gfngx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r6b88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f1xmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fgaov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pjwjl")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,

@@ -5,13 +5,13 @@
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
 [ext_resource type="PackedScene" uid="uid://cal2k0qfth8px" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
 [ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="3_4plmr"]
-[ext_resource type="PackedScene" uid="uid://ccwomfon81oh5" path="res://Utility/background.tscn" id="3_r5d8s"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
 [ext_resource type="PackedScene" uid="uid://bo0huhmlv4v03" path="res://Obstacles/Lava/lava_single.tscn" id="6_u1lef"]
 [ext_resource type="SpriteFrames" uid="uid://daxsbfoyxikdo" path="res://Assets/Sky/Sky.tres" id="8_el0rj"]
 [ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="9_r7xli"]
 [ext_resource type="SpriteFrames" uid="uid://yb2k07beoexj" path="res://Assets/Rain/Rain.tres" id="9_td7dt"]
+[ext_resource type="Texture2D" uid="uid://yqdc13kb1s5p" path="res://Assets/White.png" id="12_k2vnx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
@@ -28,10 +28,9 @@ lava_obstacles = [ExtResource("6_u1lef")]
 initial_speed = 600.0
 max_speed = 1200.0
 acceleration = 20.0
-pre_storm_duration_seconds = 8.0
+pre_storm_duration_seconds = 1.0
 
 [node name="StormBrewingTimer" type="Timer" parent="Level Elements"]
-wait_time = 10.0
 one_shot = true
 autostart = true
 
@@ -54,10 +53,7 @@ animation = &"raining"
 autoplay = "raining"
 centered = false
 
-[node name="Background" parent="Level Elements" instance=ExtResource("3_r5d8s")]
-visible = false
-position = Vector2(0, 0)
-centered = false
+[node name="Background" type="Node2D" parent="Level Elements"]
 
 [node name="Lane 1" type="StaticBody2D" parent="Level Elements"]
 position = Vector2(0, 700)
@@ -85,10 +81,16 @@ shape = SubResource("WorldBoundaryShape2D_q6xcp")
 
 [node name="Obstacles" type="Node2D" parent="Level Elements/Lane 3"]
 
-[node name="Player" parent="." instance=ExtResource("4_6v4xi")]
+[node name="Player" parent="Level Elements" instance=ExtResource("4_6v4xi")]
 position = Vector2(160, 975)
 lane_offset = 275.0
 jump_impulse_force = 450.0
+
+[node name="Flash" type="Sprite2D" parent="Level Elements"]
+visible = false
+scale = Vector2(1920, 1280)
+texture = ExtResource("12_k2vnx")
+centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 636)
