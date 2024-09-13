@@ -12,6 +12,10 @@ extends Node2D
 @onready var clouds:= $Sky/Clouds
 @onready var rain:= $Sky/Rain
 
+#Sound
+@onready var sound_manager: Node2D = $"../Sound_Manager"
+#Sound
+
 var speed: float
 var level_parts: Array
 var lane_width: float
@@ -84,6 +88,8 @@ func _process(delta: float) -> void:
 	
 func _begin_storm():
 	print("Storm has started")
+	sound_manager.play_thunder()
+	sound_manager.play_storm_amb()
 	sky.play("active")
 	clouds.play("active")
 	rain.visible = true

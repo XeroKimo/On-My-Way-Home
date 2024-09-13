@@ -25,6 +25,10 @@ func play_test_loop():
 	
 #Music and Ambiences
 func play_calm_amb():
+	$Ambiences/AMB_Storm_Noise.stop()
+	$Ambiences/AMB_Storm_Droplets.stop()
+	$Ambiences/AMB_Storm_Running.stop()
+	
 	$Ambiences/AMB_Calm_Gulls.play()
 	$Ambiences/AMB_Calm_Waves.play()
 	$Ambiences/AMB_Calm_Hiss.play()
@@ -35,9 +39,17 @@ func play_calm_mus():
 	pass
 	
 func play_storm_amb():
-	pass
-
+	$Ambiences/AMB_Calm_Gulls.stop()
+	$Ambiences/AMB_Calm_Waves.stop()
+	$Ambiences/AMB_Calm_Hiss.stop()
+	
+	$Ambiences/AMB_Storm_Noise.play()
+	$Ambiences/AMB_Storm_Droplets.play()
+	$Ambiences/AMB_Storm_Running.play()
+	
 #SFX
+
+#Player
 func play_footstep():
 	$SFX/Player_FS.play()
 
@@ -62,3 +74,7 @@ func play_collision_splash():
 
 func play_collision():
 	play_test_1()
+
+#Storm
+func play_thunder():
+	$SFX/Thunder_Crack.play()

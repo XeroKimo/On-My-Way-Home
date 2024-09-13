@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c0xd8vg0obynt"]
+[gd_scene load_steps=42 format=3 uid="uid://c0xd8vg0obynt"]
 
 [ext_resource type="Script" path="res://Utility/sound_manager.gd" id="1_juuta"]
 [ext_resource type="AudioStream" uid="uid://dfmn8ha74ml0a" path="res://Assets/Audio/Test_Sine-001.wav" id="2_ih3r5"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://c37o3opssuxqq" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-001.wav" id="28_g8b7w"]
 [ext_resource type="AudioStream" uid="uid://bqjqp7auuyi07" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-002.wav" id="29_n0y58"]
 [ext_resource type="AudioStream" uid="uid://mxewwsbexncw" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-003.wav" id="30_fwqqc"]
+[ext_resource type="AudioStream" uid="uid://5au6xcwkqi36" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit_Cracks.wav" id="34_vm782"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4oscm"]
 random_pitch = 1.14
@@ -161,3 +162,6 @@ stream = SubResource("AudioStreamRandomizer_kkbvj")
 
 [node name="Collision_Splash" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_gthii")
+
+[node name="Thunder_Crack" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("34_vm782")
