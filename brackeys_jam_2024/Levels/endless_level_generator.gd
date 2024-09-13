@@ -57,8 +57,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if GameState.game_ended:
 		return
+		
+	var distance_traveled =  speed * delta
 	for part: EndlessLevelPart in level_parts:
-		part.position.x -= speed * delta
+		part.position.x -= distance_traveled
+		
+	GameState.distance += distance_traveled
 	_spawn_new_part()
 	speed += acceleration * delta
 	
