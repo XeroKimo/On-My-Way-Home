@@ -68,6 +68,7 @@ func _process(delta: float) -> void:
 		#storm_brewing_timer.start()
 		#storm_brewing = GameState.random.randf() <= 0.2
 		storm_brewing = true
+		sound_manager.play_distant_thunder()
 		print("A storm is brewing")
 		storm_timer_seconds = -pre_storm_duration_seconds
 		sky.play("transition")

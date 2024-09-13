@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c0xd8vg0obynt"]
+[gd_scene load_steps=48 format=3 uid="uid://c0xd8vg0obynt"]
 
 [ext_resource type="Script" path="res://Utility/sound_manager.gd" id="1_juuta"]
 [ext_resource type="AudioStream" uid="uid://dfmn8ha74ml0a" path="res://Assets/Audio/Test_Sine-001.wav" id="2_ih3r5"]
@@ -15,10 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://nqpdxl1ak0uk" path="res://Assets/Audio/AMB/AMB_Storm_Lowbit_Water_Running_Loop.wav" id="10_ji00t"]
 [ext_resource type="AudioStream" uid="uid://botrr1uugpron" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-003.wav" id="11_qsdud"]
 [ext_resource type="AudioStream" uid="uid://cgais14pgaaoo" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-004.wav" id="12_ontp0"]
-[ext_resource type="AudioStream" uid="uid://ckd0irnxa0tvy" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-001.wav" id="13_v7g57"]
-[ext_resource type="AudioStream" uid="uid://bcuukmuimyajr" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-002.wav" id="14_5hp01"]
-[ext_resource type="AudioStream" uid="uid://bf00b0yu3vmrt" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-003.wav" id="15_6s0f3"]
-[ext_resource type="AudioStream" uid="uid://dw2mlx8wh827k" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-004.wav" id="16_foslb"]
+[ext_resource type="AudioStream" uid="uid://cbie765x0xv5i" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-001.wav" id="13_v7g57"]
+[ext_resource type="AudioStream" uid="uid://bkrkdtb6j6pi" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-002.wav" id="14_5hp01"]
+[ext_resource type="AudioStream" uid="uid://bjpp36klr1l2o" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-003.wav" id="15_6s0f3"]
+[ext_resource type="AudioStream" uid="uid://duvgknt6538d7" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-004.wav" id="16_foslb"]
 [ext_resource type="AudioStream" uid="uid://cya3thoe4srjd" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed-001.wav" id="20_iw7eg"]
 [ext_resource type="AudioStream" uid="uid://cthhxf2qdugjd" path="res://Assets/Audio/SFX/Player_SFX/Lane_Switch/SFX_Movement_Player_Lane_Switch_Mixed-004.wav" id="21_j8x0a"]
 [ext_resource type="AudioStream" uid="uid://d3go886lk6ll0" path="res://Assets/Audio/SFX/Player_SFX/Slide/SFX_Movement_Player_Slide_Mixed-001.wav" id="21_r7tqk"]
@@ -33,7 +33,11 @@
 [ext_resource type="AudioStream" uid="uid://c37o3opssuxqq" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-001.wav" id="28_g8b7w"]
 [ext_resource type="AudioStream" uid="uid://bqjqp7auuyi07" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-002.wav" id="29_n0y58"]
 [ext_resource type="AudioStream" uid="uid://mxewwsbexncw" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-003.wav" id="30_fwqqc"]
-[ext_resource type="AudioStream" uid="uid://5au6xcwkqi36" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit_Cracks.wav" id="34_vm782"]
+[ext_resource type="AudioStream" uid="uid://csxm44altaxhg" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit/SFX_Thunder_Lowbit_Cracks_Long-001.wav" id="34_xokin"]
+[ext_resource type="AudioStream" uid="uid://blbf5svofowr4" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit/SFX_Thunder_Lowbit_Cracks_Long-002.wav" id="35_jqa1f"]
+[ext_resource type="AudioStream" uid="uid://bxagq4lvx7vgw" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit/SFX_Thunder_Lowbit_Cracks_Long-003.wav" id="36_met4g"]
+[ext_resource type="AudioStream" uid="uid://6etgynpf5juy" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit/SFX_Thunder_Lowbit_Distant_Rumbles_Short-001.wav" id="37_yvr0u"]
+[ext_resource type="AudioStream" uid="uid://b6v85evrtb0ko" path="res://Assets/Audio/SFX/SFX_Thunder_Lowbit/SFX_Thunder_Lowbit_Distant_Rumbles_Short-002.wav" id="38_nt7mu"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4oscm"]
 random_pitch = 1.14
@@ -87,6 +91,17 @@ streams_count = 3
 stream_0/stream = ExtResource("28_g8b7w")
 stream_1/stream = ExtResource("29_n0y58")
 stream_2/stream = ExtResource("30_fwqqc")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u316a"]
+streams_count = 3
+stream_0/stream = ExtResource("34_xokin")
+stream_1/stream = ExtResource("35_jqa1f")
+stream_2/stream = ExtResource("36_met4g")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ik4cf"]
+streams_count = 2
+stream_0/stream = ExtResource("37_yvr0u")
+stream_1/stream = ExtResource("38_nt7mu")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_juuta")
@@ -143,23 +158,23 @@ bus = &"SFX"
 
 [node name="Player_Jump" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_f6v80")
-volume_db = 6.0
+volume_db = -18.0
 bus = &"SFX"
 
 [node name="Player_Lane_Switch_Down" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_ng38k")
-volume_db = -12.0
+volume_db = -24.0
 pitch_scale = 0.8
 bus = &"SFX"
 
 [node name="Player_Lane_Switch_Up" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_xe27i")
-volume_db = -12.0
+volume_db = -24.0
 pitch_scale = 0.8
 
 [node name="Player_Slide" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_qofkv")
-volume_db = 6.0
+volume_db = -18.0
 bus = &"SFX"
 
 [node name="Collision_Bonk" type="AudioStreamPlayer" parent="SFX"]
@@ -169,9 +184,13 @@ stream = SubResource("AudioStreamRandomizer_kkbvj")
 stream = SubResource("AudioStreamRandomizer_gthii")
 
 [node name="Thunder_Crack" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("34_vm782")
+stream = SubResource("AudioStreamRandomizer_u316a")
 volume_db = -12.0
 bus = &"SFX"
+
+[node name="Thunder_Rumble" type="AudioStreamPlayer" parent="SFX"]
+stream = SubResource("AudioStreamRandomizer_ik4cf")
+volume_db = -12.0
 
 [node name="Game_Over" type="AudioStreamPlayer" parent="SFX"]
 bus = &"SFX"
