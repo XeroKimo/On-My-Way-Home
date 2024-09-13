@@ -28,9 +28,10 @@ lava_obstacles = [ExtResource("6_u1lef")]
 initial_speed = 600.0
 max_speed = 1200.0
 acceleration = 20.0
-pre_storm_duration_seconds = 1.0
+pre_storm_duration_seconds = 8.0
 
 [node name="StormBrewingTimer" type="Timer" parent="Level Elements"]
+wait_time = 10.0
 one_shot = true
 autostart = true
 
