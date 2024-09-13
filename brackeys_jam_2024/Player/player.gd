@@ -17,7 +17,11 @@ var collider_shape : RectangleShape2D
 @export var slide_duration_seconds: float = 0.5
 var original_collider_y_pos: float
 var original_collider_height: float
-var sliding: bool = false
+var sliding_queued: bool = false
+var sliding_timer: float = 0
+var sliding: bool:
+	get: return sliding_timer > 0
+
 
 @onready var animator:= $AnimatedSprite2D
 var previous_frame: int
@@ -43,24 +47,28 @@ func _input(event: InputEvent) -> void:
 		$Sound_Manager.play_lane_switch_up()
 	if event.is_action_pressed("jump") && is_on_ground:
 		stop_sliding()
+		gravity_scale = 1
 		apply_central_impulse(Vector2.UP * jump_impulse_force)
 		$Sound_Manager.play_jump()
 		is_on_ground = false
 		animator.play("jump")
 		previous_frame = 0
 		#ends here -tj
-	if event.is_action_pressed("slide") && !sliding && is_on_ground:
-		start_sliding()
-		$Sound_Manager.play_slide()
-		await get_tree().create_timer(slide_duration_seconds).timeout
-		stop_sliding()
+	if event.is_action_pressed("slide") && !sliding:
+		if is_on_ground:
+			start_sliding()
+		else:
+			sliding_queued = true
+			gravity_scale = 8
 
 func start_sliding():
-	sliding = true
+	sliding_queued = false
+	sliding_timer = slide_duration_seconds
 	collider_shape.size.y = original_collider_height * slide_collider_height
 	collider.position.y = original_collider_y_pos + (1 - slide_collider_height) * original_collider_height / 2
 	animator.stop()
 	animator.play("slide")
+	$Sound_Manager.play_slide()
 	
 	
 func stop_sliding():
@@ -68,7 +76,7 @@ func stop_sliding():
 	collider.position.y = original_collider_y_pos
 	animator.stop()
 	animator.play("default_walk")
-	sliding = false
+	sliding_timer = 0
 
 
 	
@@ -76,10 +84,15 @@ func stop_sliding():
 func _physics_process(delta: float) -> void:
 	is_on_ground = linear_velocity.y <= 0 && ground_detector.is_colliding()
 	
+	if sliding:
+		sliding_timer -= delta;
 	#janky walk sounds -tj
 	if !previous_is_on_ground && is_on_ground:
 		animator.play("default_walk")
 		animator.frame = 1
+		
+	if sliding_queued && is_on_ground:
+		start_sliding()
 		
 	if  is_on_ground && animator.animation == "default_walk" :
 		if animator.frame == 1 && previous_frame != animator.frame:
