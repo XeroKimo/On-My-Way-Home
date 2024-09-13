@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c0xd8vg0obynt"]
+[gd_scene load_steps=49 format=3 uid="uid://c0xd8vg0obynt"]
 
 [ext_resource type="Script" path="res://Utility/sound_manager.gd" id="1_juuta"]
 [ext_resource type="AudioStream" uid="uid://dfmn8ha74ml0a" path="res://Assets/Audio/Test_Sine-001.wav" id="2_ih3r5"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dntbooqtsi8s1" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-002.wav" id="10_i4xaw"]
 [ext_resource type="AudioStream" uid="uid://nqpdxl1ak0uk" path="res://Assets/Audio/AMB/AMB_Storm_Lowbit_Water_Running_Loop.wav" id="10_ji00t"]
 [ext_resource type="AudioStream" uid="uid://botrr1uugpron" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-003.wav" id="11_qsdud"]
+[ext_resource type="AudioStream" uid="uid://dkfs6ykgl3qy5" path="res://Assets/Audio/MUS/Menu_Music.mp3" id="12_a2m7k"]
 [ext_resource type="AudioStream" uid="uid://cgais14pgaaoo" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-004.wav" id="12_ontp0"]
 [ext_resource type="AudioStream" uid="uid://cbie765x0xv5i" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-001.wav" id="13_v7g57"]
 [ext_resource type="AudioStream" uid="uid://bkrkdtb6j6pi" path="res://Assets/Audio/SFX/Player_SFX/Jump/SFX_Movement_Player_Jump_Mixed-002.wav" id="14_5hp01"]
@@ -148,6 +149,9 @@ bus = &"AMB"
 [node name="MUS_Calm" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("8_cticm")
 bus = &"MUS"
+
+[node name="MUS_Menu" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("12_a2m7k")
 
 [node name="SFX" type="Node" parent="."]
 

@@ -24,6 +24,13 @@ func play_test_loop():
 	sine_test_loop.play()
 	
 #Music and Ambiences
+func play_calm_mus():
+	$Music/MUS_Calm.play()
+	
+	
+func play_menu_music():
+	$Music/MUS_Menu.play()
+	
 func play_calm_amb():
 	$Ambiences/AMB_Storm_Noise.stop()
 	$Ambiences/AMB_Storm_Droplets.stop()
@@ -32,11 +39,9 @@ func play_calm_amb():
 	$Ambiences/AMB_Calm_Gulls.play()
 	$Ambiences/AMB_Calm_Waves.play()
 	$Ambiences/AMB_Calm_Hiss.play()
-	pass
+
 	
-func play_calm_mus():
-	$Music/MUS_Calm.play()
-	pass
+
 	
 func play_storm_amb():
 	$Ambiences/AMB_Calm_Gulls.stop()
