@@ -125,6 +125,7 @@ func _end_storm():
 	clouds.speed_scale = 1.0
 	sky.play_backwards("transition")
 	clouds.play_backwards("transition")
+	sound_manager.play_calm_amb()
 	rain.visible = false
 	for p in level_parts:
 		var part = p as EndlessLevelPart
