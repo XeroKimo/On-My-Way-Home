@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ckd0irnxa0tvy"
+uid="uid://cbie765x0xv5i"
 path="res://.godot/imported/SFX_Movement_Player_Jump_Mixed-001.wav-25861f9f1086925d205c187d3e9840de.sample"
 
 [deps]
@@ -16,8 +16,8 @@ force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
+edit/trim=true
+edit/normalize=true
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1

@@ -79,3 +79,6 @@ func play_collision(stream: AudioStream):
 #Storm
 func play_thunder():
 	$SFX/Thunder_Crack.play()
+
+func play_distant_thunder():
+	$SFX/Thunder_Rumble.play()
