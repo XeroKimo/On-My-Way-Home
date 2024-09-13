@@ -1,9 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddgkp3dgel6wr"]
+[gd_scene load_steps=19 format=3 uid="uid://ddgkp3dgel6wr"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
 [ext_resource type="SpriteFrames" uid="uid://dy15uc5p3hhll" path="res://Assets/Clouds/Clouds.tres" id="2_ghqmb"]
 [ext_resource type="Script" path="res://Levels/endless_level_generator.gd" id="2_jc88d"]
-[ext_resource type="PackedScene" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
+[ext_resource type="PackedScene" uid="uid://cal2k0qfth8px" path="res://Levels/Endless_Level_Part.tscn" id="2_jioax"]
 [ext_resource type="PackedScene" uid="uid://bk3fwk1j33tmr" path="res://Obstacles/Hurdle/Hurdle.tscn" id="3_4plmr"]
 [ext_resource type="PackedScene" uid="uid://drtkdr0lbwkki" path="res://Player/Player.tscn" id="4_6v4xi"]
 [ext_resource type="PackedScene" uid="uid://ceklpqo1b0pph" path="res://Obstacles/Stone/Stone.tscn" id="5_kpd41"]
