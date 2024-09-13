@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 	$"Player Shadow".position.y = lanes[$Player.lane].position.y - 15
 	var texture: Texture2D = shadow_array[0] as Texture2D
 	var player_height = (lanes[$Player.lane].position.y - $Player.position.y)
-	print(player_height)
+	#print(player_height)
 	for i in shadow_array.size() - 1:
 		if player_height >= (shadow_heights[i] as float):
 			texture = shadow_array[i + 1]
