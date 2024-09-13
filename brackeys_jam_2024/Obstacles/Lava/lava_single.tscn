@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_dqhyh"]
 [ext_resource type="AudioStream" uid="uid://mxewwsbexncw" path="res://Assets/Audio/SFX/Player_SFX/Splash/SFX_Movement_Player_Splash_Mixed-003.wav" id="2_oib5k"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3qpqp"]
+[ext_resource type="Texture2D" uid="uid://crgds775pie2l" path="res://Obstacles/Lava/puddle.png" id="3_1dfg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kx1u"]
-size = Vector2(172, 57.5)
+size = Vector2(150, 30.75)
 
 [node name="LavaSingle" type="Area2D"]
 collision_layer = 16
@@ -16,13 +15,11 @@ audio_stream = ExtResource("2_oib5k")
 metadata/type = "lava"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(0, -69)
-scale = Vector2(297.5, 222.5)
-texture = SubResource("PlaceholderTexture2D_3qpqp")
+position = Vector2(0, -116)
+texture = ExtResource("3_1dfg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13.75)
+position = Vector2(0, -15.625)
 shape = SubResource("RectangleShape2D_3kx1u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
