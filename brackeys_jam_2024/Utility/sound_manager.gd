@@ -30,7 +30,7 @@ func play_test_loop():
 #Music and Ambiences
 func play_game_over():
 	#stops
-	await $SFX/Game_Over.finished
+	#await $SFX/Game_Over.finished
 	$Ambiences/AMB_Calm_Gulls.stop()
 	$Ambiences/AMB_Calm_Waves.stop()
 	$Ambiences/AMB_Calm_Hiss.stop()
@@ -41,7 +41,9 @@ func play_game_over():
 	$Music/MUS_Storm.stop()
 	
 	#plays
-	AudioServer.set_bus_mute(sfx_bus, true)
+
+	#Xero: You didn't unmute this, but I made a work around so you don't need to mute anymore
+	#AudioServer.set_bus_mute(sfx_bus, true)
 	$Music/MUS_Menu.play()
 	$Ambiences/AMB_Storm_Noise.play()
 	$Ambiences/AMB_Storm_Droplets.play()

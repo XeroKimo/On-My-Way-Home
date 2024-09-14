@@ -33,6 +33,8 @@ func reset_game() -> void:
 func end_game() -> void:
 	if invincible_mode:
 		return
+	if game_ended:
+		return
 	print("Distance traveled: ", score)
 	if score > highscore:
 		highscore = score

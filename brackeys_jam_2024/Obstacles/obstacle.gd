@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	sound_manager.play_collision(audio_stream)
 	#end
 	GameState.end_game()
+	collision_mask = 0
 	print("some body entered ", body.name)
 	pass # Replace with function body.
 

@@ -3,6 +3,7 @@ class_name EndlessLevelPart
 extends Node2D
 
 @export var _lane_proxies: Array
+@export var _obstacle_relative_offset: Array = [0.0, 0.0, 0.0]
 @onready var _lane_width: int = ProjectSettings.get_setting("global/lane_width")
 @onready var _cell_count: int= ProjectSettings.get_setting("global/cell_count")
 
@@ -37,12 +38,7 @@ func initialize(positions: Array, obstacles: Array, lava_nodes: Array, spawn_lav
 	for i in _cells.size():
 		if _cells[i] == null:
 			continue
-		var child: = (_cells[i] as PackedScene).instantiate() as Obstacle
-		var lane = i / _cell_count
-		child.collision_layer |= 1 << lane
-		_get_lane(lane).add_child(child)
-		child.position = Vector2((_lane_width / _cell_count) * 
-			(i % _cell_count) + (_lane_width / _cell_count) / 2, 0)
+		_spawn_obstacle(_cells[i], _cell_to_lane(i), _cell_to_column(i))
 	
 	if spawn_lava_nodes:
 		spawn_lava_nodes(lava_nodes)
@@ -55,11 +51,15 @@ func spawn_lava_nodes(lava_nodes: Array):
 			if _is_safe_cell(i):
 				continue
 			_cells[i] = lava_nodes[0];
-			var child: = (_cells[i] as PackedScene).instantiate() as Obstacle
-			var lane = i / _cell_count
-			child.collision_layer |= 1 << lane
-			_get_lane(lane).add_child(child)
-			child.position = Vector2((_lane_width / _cell_count) * (i % _cell_count) + (_lane_width / _cell_count) / 2, 0)
+			_spawn_obstacle(_cells[i], _cell_to_lane(i), _cell_to_column(i))
+			
+
+func _spawn_obstacle(scene: PackedScene, lane: int, column: int):
+	var child: = scene.instantiate() as Obstacle
+	child.collision_layer |= 1 << lane
+	_get_lane(lane).add_child(child)
+	child.position = Vector2((_lane_width / _cell_count) * (column % _cell_count) + (_lane_width / _cell_count) / 2 + (_lane_width / _cell_count) * _obstacle_relative_offset[lane], 0)
+	
 
 func remove_lava_nodes():
 	for i in _lane_proxies.size():
@@ -82,6 +82,8 @@ func _is_safe_cell(index: int) -> bool:
 	return _cells[index] == null && _safe_path[index % _cell_count] == lane
 
 func _draw() -> void:
+	var rect = Rect2(Vector2(0, 0), Vector2(1920,1280))
+	draw_rect(rect, Color.ALICE_BLUE, false)
 	#for i in _safe_path.size():
 		#draw_string(ThemeDB.fallback_font, _cell_to_position(_safe_path[i], i), "Is Safe", HORIZONTAL_ALIGNMENT_CENTER)
 	pass
