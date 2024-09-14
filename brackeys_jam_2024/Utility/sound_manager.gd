@@ -92,6 +92,14 @@ func play_storm_amb():
 	
 #SFX
 
+#ui
+func play_menu_start():
+	$Music/MUS_Menu.stop()
+	$Ambiences/AMB_Storm_Noise.stop()
+	$Ambiences/AMB_Storm_Droplets.stop()
+	
+	$SFX/UI_Menu_Start.play()
+	await $SFX/UI_Menu_Start.finished
 #Player
 func play_footstep():
 	$SFX/Player_FS.play()
