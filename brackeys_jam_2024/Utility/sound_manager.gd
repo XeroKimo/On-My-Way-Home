@@ -7,6 +7,7 @@ var mus_bus = AudioServer.get_bus_index("MUS")
 var sfx_bus = AudioServer.get_bus_index("SFX")
 var amb_bus = AudioServer.get_bus_index("AMB")
 
+signal collision_played
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -29,6 +30,7 @@ func play_test_loop():
 #Music and Ambiences
 func play_game_over():
 	#stops
+	await $SFX/Game_Over.finished
 	$Ambiences/AMB_Calm_Gulls.stop()
 	$Ambiences/AMB_Calm_Waves.stop()
 	$Ambiences/AMB_Calm_Hiss.stop()
@@ -114,6 +116,7 @@ func play_collision_splash():
 func play_collision(stream: AudioStream):
 	$SFX/Game_Over.stream = stream
 	$SFX/Game_Over.play()
+	
 
 #Storm
 func play_thunder():

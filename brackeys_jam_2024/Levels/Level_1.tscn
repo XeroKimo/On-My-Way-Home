@@ -418,3 +418,5 @@ position = Vector2(963, 412)
 zoom = Vector2(0.6, 0.51)
 
 [node name="Sound_Manager" parent="." instance=ExtResource("8_54u0m")]
+
+[connection signal="collision_played" from="Sound_Manager" to="GameStateManager" method="_on_sound_manager_collision_played"]

@@ -17,6 +17,7 @@ extends Node2D
 
 #Sound
 @onready var sound_manager: Node2D = $Sound_Manager
+var collision_played : bool = false
 #Sound
 
 var speed: float

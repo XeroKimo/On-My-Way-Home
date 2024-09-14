@@ -122,3 +122,5 @@ script = ExtResource("13_dt6do")
 
 [node name="GameOver" parent="." instance=ExtResource("10_6jffq")]
 visible = false
+
+[connection signal="collision_played" from="Sound_Manager" to="." method="_on_sound_manager_collision_played"]
