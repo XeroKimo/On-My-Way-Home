@@ -105,8 +105,8 @@ texture = ExtResource("12_k2vnx")
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 636)
-zoom = Vector2(0.6, 0.51)
+position = Vector2(960, 640)
+zoom = Vector2(0.667, 0.667)
 
 [node name="Sound_Manager" parent="." instance=ExtResource("9_r7xli")]
 

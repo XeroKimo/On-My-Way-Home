@@ -11,8 +11,8 @@ texture = ExtResource("1_5408f")
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(314, 250)
-zoom = Vector2(1.83, 1.296)
+position = Vector2(315, 250)
+zoom = Vector2(2.032, 1.704)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_top = 413.0

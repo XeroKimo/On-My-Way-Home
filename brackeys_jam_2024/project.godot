@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Brackeys_Jam_2024"
+config/name="On My Way Home"
 run/main_scene="res://Levels/Main_Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -21,6 +21,8 @@ GameState="*res://Levels/game_state.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=852
 window/stretch/mode="viewport"
 
 [global]
