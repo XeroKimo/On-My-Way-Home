@@ -83,6 +83,8 @@ func stop_sliding():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if GameState.game_ended:
+		return
 	is_on_ground = linear_velocity.y <= 0 && ground_detector.is_colliding()
 	
 	previous_sliding_timer = sliding_timer
