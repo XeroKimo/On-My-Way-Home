@@ -135,7 +135,7 @@ func _begin_storm():
 	_play_lightning()
 	for p in level_parts:
 		var part = p as EndlessLevelPart
-		if part.position.x >= lane_width:
+		if part.position.x >= lane_width / 2:
 			part.spawn_lava_nodes(lava_obstacles)
 	pass
 	
