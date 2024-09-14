@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcnmlq07cgde"]
+
+[ext_resource type="Texture2D" uid="uid://e4cgdg1xtp64" path="res://Assets/thumbnail.png" id="1_5408f"]
+[ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_e4k5d"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_e4k5d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5408f")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(314, 250)
+zoom = Vector2(1.83, 1.296)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 413.0
+offset_right = 629.0
+offset_bottom = 453.0
+theme_override_colors/default_color = Color(0.5237, 0.0667563, 0.148612, 1)
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[center]Press spacebar to play[/center]"
