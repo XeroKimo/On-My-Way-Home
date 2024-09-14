@@ -40,7 +40,7 @@ var storm_in_progress: bool:
 
 # Called when the node enters the scene tree for the first time.
 func _on_game_ended():
-	await get_tree().create_timer(0.5).timeout
+	#await get_tree().create_timer(0.5).timeout
 	$GameOver.visible = true
 	sound_manager.play_game_over()
 

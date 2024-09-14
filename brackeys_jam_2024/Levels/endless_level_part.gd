@@ -82,8 +82,8 @@ func _is_safe_cell(index: int) -> bool:
 	return _cells[index] == null && _safe_path[index % _cell_count] == lane
 
 func _draw() -> void:
-	var rect = Rect2(Vector2(0, 0), Vector2(1920,1280))
-	draw_rect(rect, Color.ALICE_BLUE, false)
+	#var rect = Rect2(Vector2(0, 0), Vector2(1920,1280))
+	#draw_rect(rect, Color.ALICE_BLUE, false)
 	#for i in _safe_path.size():
 		#draw_string(ThemeDB.fallback_font, _cell_to_position(_safe_path[i], i), "Is Safe", HORIZONTAL_ALIGNMENT_CENTER)
 	pass

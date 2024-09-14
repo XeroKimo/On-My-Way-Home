@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcnmlq07cgde"]
+[gd_scene load_steps=5 format=3 uid="uid://dcnmlq07cgde"]
 
 [ext_resource type="Texture2D" uid="uid://e4cgdg1xtp64" path="res://Assets/thumbnail.png" id="1_5408f"]
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_e4k5d"]
 [ext_resource type="PackedScene" uid="uid://c0xd8vg0obynt" path="res://Utility/Sound_Manager.tscn" id="3_5fohy"]
+[ext_resource type="FontFile" uid="uid://dyewkp68sblbf" path="res://Assets/Retro Gaming.ttf" id="3_bc8j4"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_e4k5d")
@@ -20,6 +21,7 @@ offset_top = 413.0
 offset_right = 629.0
 offset_bottom = 453.0
 theme_override_colors/default_color = Color(0.5237, 0.0667563, 0.148612, 1)
+theme_override_fonts/normal_font = ExtResource("3_bc8j4")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "[center]Press spacebar to play[/center]"

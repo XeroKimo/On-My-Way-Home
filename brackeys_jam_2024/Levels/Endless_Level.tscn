@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ddgkp3dgel6wr"]
+[gd_scene load_steps=20 format=3 uid="uid://ddgkp3dgel6wr"]
 
 [ext_resource type="Script" path="res://Player/game_state_manager.gd" id="1_qpv6c"]
 [ext_resource type="SpriteFrames" uid="uid://dy15uc5p3hhll" path="res://Assets/Clouds/Clouds.tres" id="2_ghqmb"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bseaf16ovi1vd" path="res://Player/shadow.png" id="10_p8y5m"]
 [ext_resource type="Texture2D" uid="uid://yqdc13kb1s5p" path="res://Assets/White.png" id="12_k2vnx"]
 [ext_resource type="Script" path="res://Levels/score.gd" id="13_dt6do"]
+[ext_resource type="FontFile" uid="uid://dyewkp68sblbf" path="res://Assets/Retro Gaming.ttf" id="16_867mr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6xcp"]
 
@@ -116,6 +117,7 @@ offset_top = 21.0
 offset_right = 359.0
 offset_bottom = 81.0
 theme_override_colors/default_color = Color(1, 0.655717, 0.21986, 1)
+theme_override_fonts/normal_font = ExtResource("16_867mr")
 theme_override_font_sizes/normal_font_size = 32
 text = "Distance:"
 script = ExtResource("13_dt6do")
