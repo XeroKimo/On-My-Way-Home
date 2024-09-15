@@ -174,19 +174,19 @@ bus = &"SFX"
 
 [node name="Player_Lane_Switch_Down" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_ng38k")
-volume_db = -24.0
+volume_db = -26.0
 pitch_scale = 0.8
 bus = &"SFX"
 
 [node name="Player_Lane_Switch_Up" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_xe27i")
-volume_db = -24.0
+volume_db = -26.0
 pitch_scale = 0.8
 bus = &"SFX"
 
 [node name="Player_Slide" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_qofkv")
-volume_db = -18.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="Collision_Bonk" type="AudioStreamPlayer" parent="SFX"]
