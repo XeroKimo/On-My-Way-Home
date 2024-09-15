@@ -212,3 +212,4 @@ bus = &"SFX"
 
 [node name="UI_Menu_Start" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("41_65m71")
+bus = &"SFX"
