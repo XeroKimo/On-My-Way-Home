@@ -8,6 +8,8 @@ var sfx_bus = AudioServer.get_bus_index("SFX")
 var amb_bus = AudioServer.get_bus_index("AMB")
 
 signal collision_played
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -26,11 +28,12 @@ func play_test_2():
 	
 func play_test_loop():
 	sine_test_loop.play()
+
+
 	
 #Music and Ambiences
 func play_game_over():
 	#stops
-	#await $SFX/Game_Over.finished
 	$Ambiences/AMB_Calm_Gulls.stop()
 	$Ambiences/AMB_Calm_Waves.stop()
 	$Ambiences/AMB_Calm_Hiss.stop()
@@ -41,21 +44,20 @@ func play_game_over():
 	$Music/MUS_Storm.stop()
 	
 	#plays
-
-	#Xero: You didn't unmute this, but I made a work around so you don't need to mute anymore
-	#AudioServer.set_bus_mute(sfx_bus, true)
-	$Music/MUS_Menu.play()
+	$Music/MUS_Menu.play() 
 	$Ambiences/AMB_Storm_Noise.play()
 	$Ambiences/AMB_Storm_Droplets.play()
 func play_calm_mus():
 	$Music/MUS_Menu.stop()
 	$Music/MUS_Storm.stop()
 	
+	
 	$Music/MUS_Calm.play()
-	#$Music/MUS_Menu.play()
+	
 func play_storm_mus():
 	$Music/MUS_Menu.stop()
 	$Music/MUS_Calm.stop()
+	
 	
 	$Music/MUS_Storm.play()
 	
@@ -90,7 +92,19 @@ func play_storm_amb():
 	$Ambiences/AMB_Storm_Droplets.play()
 	$Ambiences/AMB_Storm_Running.play()
 	
+
+
+
 #SFX
+
+#UI
+func play_menu_start():
+	$Music/MUS_Menu.stop()
+	$Ambiences/AMB_Storm_Noise.stop()
+	$Ambiences/AMB_Storm_Droplets.stop()
+	
+	$SFX/UI_Menu_Start.play()
+	await $SFX/UI_Menu_Start.finished
 
 #Player
 func play_footstep():
