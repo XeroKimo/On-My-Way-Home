@@ -35,6 +35,7 @@ func _ready() -> void:
 	collider_shape = collider.shape as RectangleShape2D
 	original_collider_height = collider_shape.size.y
 	original_collider_y_pos = collider.position.y
+	GameState.on_game_ended.connect(stop_sliding)
 
 func _input(event: InputEvent) -> void:
 	if GameState.game_ended:
