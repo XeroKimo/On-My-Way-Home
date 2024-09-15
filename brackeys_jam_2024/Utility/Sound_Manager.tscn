@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cgixq7ekf8oc" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Animal_Gulls_Loop.wav" id="5_o05xu"]
 [ext_resource type="AudioStream" uid="uid://b02tjfn7h8xrv" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Water_Waves_Loop.wav" id="6_gsyb4"]
 [ext_resource type="AudioStream" uid="uid://cdiq1enkpxkj5" path="res://Assets/Audio/AMB/AMB_Calm_Lowbit_Water_Hiss_Loop.wav" id="7_2sehs"]
-[ext_resource type="AudioStream" uid="uid://c8a05lui2y2hu" path="res://Assets/Audio/AMB/AMB_Storm_Lowbit_Noise_Static_Loop.wav" id="8_w3dtk"]
+[ext_resource type="AudioStream" uid="uid://dry6r87b53tsv" path="res://Assets/Audio/AMB/AMB_Storm_Lowbit_Noise_Static_Fadeless_Loop.wav" id="8_gsv1l"]
 [ext_resource type="AudioStream" uid="uid://fr2lagfwkoqj" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-001.wav" id="9_hs75r"]
 [ext_resource type="AudioStream" uid="uid://c8dtx4apcf23l" path="res://Assets/Audio/AMB/AMB_Storm_Lowbit_Water_Droplets_Loop.wav" id="9_vkug3"]
 [ext_resource type="AudioStream" uid="uid://dntbooqtsi8s1" path="res://Assets/Audio/SFX/Player_SFX/FS/SFX_Movement_Player_FS_Mixed-002.wav" id="10_i4xaw"]
@@ -135,7 +135,7 @@ stream = ExtResource("7_2sehs")
 bus = &"AMB"
 
 [node name="AMB_Storm_Noise" type="AudioStreamPlayer" parent="Ambiences"]
-stream = ExtResource("8_w3dtk")
+stream = ExtResource("8_gsv1l")
 bus = &"AMB"
 
 [node name="AMB_Storm_Droplets" type="AudioStreamPlayer" parent="Ambiences"]

@@ -111,7 +111,7 @@ func play_footstep():
 	$SFX/Player_FS.play()
 
 func play_jump():
-	$SFX/Player_Jump.play()
+	$SFX/Player_Jump.play() 
 
 func play_slide():
 	$SFX/Player_Slide.play()
