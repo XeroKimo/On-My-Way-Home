@@ -28,6 +28,8 @@ func play_test_2():
 	
 func play_test_loop():
 	sine_test_loop.play()
+
+
 	
 #Music and Ambiences
 func play_game_over():
@@ -42,22 +44,23 @@ func play_game_over():
 	$Music/MUS_Storm.stop()
 	
 	#plays
-	
-	$Music/MUS_Storm.play()
-	#$Music/MUS_Menu.play()
+	$Music/MUS_Menu.play() 
 	$Ambiences/AMB_Storm_Noise.play()
 	$Ambiences/AMB_Storm_Droplets.play()
 func play_calm_mus():
 	$Music/MUS_Menu.stop()
 	$Music/MUS_Storm.stop()
 	
+	
 	$Music/MUS_Calm.play()
-	#$Music/MUS_Menu.play()
+	
 func play_storm_mus():
 	$Music/MUS_Menu.stop()
-	#$Music/MUS_Calm.stop()
+	$Music/MUS_Calm.stop()
 	
-	#$Music/MUS_Storm.play()
+	
+	$Music/MUS_Storm.play()
+	
 func play_menu_mus():
 	$Music/MUS_Calm.stop()
 	$Music/MUS_Storm.stop()
@@ -89,9 +92,12 @@ func play_storm_amb():
 	$Ambiences/AMB_Storm_Droplets.play()
 	$Ambiences/AMB_Storm_Running.play()
 	
+
+
+
 #SFX
 
-#ui
+#UI
 func play_menu_start():
 	$Music/MUS_Menu.stop()
 	$Ambiences/AMB_Storm_Noise.stop()
@@ -99,6 +105,7 @@ func play_menu_start():
 	
 	$SFX/UI_Menu_Start.play()
 	await $SFX/UI_Menu_Start.finished
+
 #Player
 func play_footstep():
 	$SFX/Player_FS.play()
